@@ -33,10 +33,6 @@
       0% { transform: translateX(0%); }
       100% { transform: translateX(-50%); }
     }
-    @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
     .animate-kinetic {
       display: flex;
       width: max-content;
@@ -172,7 +168,6 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Service 1 -->
       <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-8 shadow-neo flex flex-col justify-between group hover:-translate-y-1 transition-all">
         <div>
           <div class="w-14 h-14 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-syne font-bold text-xl text-black shadow-neo-sm mb-6">01</div>
@@ -189,7 +184,6 @@
         </div>
       </div>
 
-      <!-- Service 2 -->
       <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-8 shadow-neo flex flex-col justify-between group hover:-translate-y-1 transition-all">
         <div>
           <div class="w-14 h-14 bg-[#FF5C8A] border-2 border-black flex items-center justify-center font-syne font-bold text-xl text-white shadow-neo-sm mb-6">02</div>
@@ -206,7 +200,6 @@
         </div>
       </div>
 
-      <!-- Service 3 -->
       <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-8 shadow-neo flex flex-col justify-between group hover:-translate-y-1 transition-all">
         <div>
           <div class="w-14 h-14 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-syne font-bold text-xl text-black shadow-neo-sm mb-6">03</div>
@@ -425,10 +418,8 @@
   </footer>
 
   <script>
-    // Lucide Icons
     lucide.createIcons();
 
-    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
 
@@ -436,7 +427,6 @@
       html.classList.toggle('dark');
     });
 
-    // Form Submission
     const form = document.getElementById('appointmentForm');
     const successMsg = document.getElementById('successMessage');
 

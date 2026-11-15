@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Ushma Skin & Hair Clinic | Neo-Brutalism Edition</title>
+  <title>Dr. Ushma Skin & Hair Clinic | Kinetic Typography Edition</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
@@ -15,6 +15,7 @@
       theme: {
         extend: {
           fontFamily: {
+            syne: ['"Syne"', 'sans-serif'],
             sans: ['"Space Grotesk"', 'sans-serif'],
             jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
@@ -22,36 +23,53 @@
             'neo': '4px 4px 0px 0px #0a0a0a',
             'neo-sm': '2px 2px 0px 0px #0a0a0a',
             'neo-lg': '6px 6px 0px 0px #0a0a0a',
-            'neo-rose': '4px 4px 0px 0px #e11d48',
           }
         }
       }
     }
   </script>
+  <style>
+    @keyframes kineticSlide {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .animate-kinetic {
+      display: flex;
+      width: max-content;
+      animation: kineticSlide 20s linear infinite;
+    }
+    .animate-kinetic:hover {
+      animation-play-state: paused;
+    }
+    .text-stroke-black {
+      -webkit-text-stroke: 2px #0a0a0a;
+    }
+    .dark .text-stroke-black {
+      -webkit-text-stroke: 2px #ffffff;
+    }
+  </style>
 </head>
-<body class="bg-[#FFFDF9] dark:bg-[#121212] text-neutral-900 dark:text-neutral-100 font-sans selection:bg-[#FFE55C] selection:text-black transition-colors duration-200">
+<body class="bg-[#FAF8F5] dark:bg-[#0d0d0d] text-neutral-900 dark:text-neutral-100 font-sans selection:bg-[#FFE55C] selection:text-black transition-colors duration-200 overflow-x-hidden">
 
-  <!-- TOP TICKER -->
-  <div class="bg-[#FFE55C] text-black font-jakarta font-bold text-xs py-2 px-4 border-b-2 border-black flex justify-between items-center overflow-hidden">
-    <div class="flex items-center gap-6 whitespace-nowrap animate-marquee">
-      <span>⚡ 20+ YEARS OF DERMATOLOGY EXCELLENCE IN VIJAYAWADA</span>
-      <span>•</span>
-      <span>🌟 ADVANCED LASER & ACNE SCAR SOLUTIONS</span>
-      <span>•</span>
-      <span>📞 CALL NOW: +91 98765 43210</span>
-    </div>
-    <div class="hidden md:flex items-center gap-4">
-      <span class="bg-black text-[#FFE55C] px-2 py-0.5 rounded text-[10px]">OPEN TODAY TILL 8 PM</span>
+  <!-- KINETIC TICKER BANNER -->
+  <div class="bg-[#FFE55C] text-black py-4 border-b-2 border-black overflow-hidden font-syne font-extrabold text-2xl uppercase tracking-wider">
+    <div class="animate-kinetic flex gap-12 items-center">
+      <span class="flex items-center gap-4">✨ ADVANCED DERMATOLOGY • ACNE SCAR SOLUTIONS • LASER HAIR REDUCTION • ANTI-AGING EXPERTISE • DR. USHMA CLINIC VIJAYAWADA •</span>
+      <span class="flex items-center gap-4">✨ ADVANCED DERMATOLOGY • ACNE SCAR SOLUTIONS • LASER HAIR REDUCTION • ANTI-AGING EXPERTISE • DR. USHMA CLINIC VIJAYAWADA •</span>
     </div>
   </div>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-[#FFFDF9] dark:bg-[#121212] border-b-2 border-black dark:border-neutral-700">
+  <header class="sticky top-0 z-50 bg-[#FAF8F5]/90 dark:bg-[#0d0d0d]/90 backdrop-blur-md border-b-2 border-black dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-[#FF5C8A] border-2 border-black shadow-neo-sm flex items-center justify-center text-white font-bold text-xl">U</div>
+        <div class="w-10 h-10 bg-[#FF5C8A] border-2 border-black shadow-neo-sm flex items-center justify-center text-white font-syne font-bold text-xl">U</div>
         <div>
-          <span class="text-lg md:text-xl font-bold tracking-tight block">Dr. Ushma's Clinic</span>
+          <span class="text-lg md:text-xl font-syne font-bold tracking-tight block">DR. USHMA'S</span>
           <span class="text-[10px] font-jakarta uppercase tracking-wider text-neutral-600 dark:text-neutral-400 font-semibold">Skin & Hair Aesthetics</span>
         </div>
       </a>
@@ -59,7 +77,7 @@
       <nav class="hidden md:flex items-center gap-8 font-jakarta font-bold text-sm">
         <a href="#services" class="hover:text-[#FF5C8A] transition-colors">TREATMENTS</a>
         <a href="#about" class="hover:text-[#FF5C8A] transition-colors">DR. USHMA</a>
-        <a href="#results" class="hover:text-[#FF5C8A] transition-colors">BEFORE / AFTER</a>
+        <a href="#results" class="hover:text-[#FF5C8A] transition-colors">RESULTS</a>
         <a href="#reviews" class="hover:text-[#FF5C8A] transition-colors">REVIEWS</a>
         <a href="#contact" class="hover:text-[#FF5C8A] transition-colors">LOCATION</a>
       </nav>
@@ -70,415 +88,366 @@
           <i data-lucide="sun" class="w-4 h-4 block dark:hidden text-neutral-900"></i>
         </button>
         <a href="#book" class="hidden sm:inline-flex px-6 py-3 bg-[#FFE55C] border-2 border-black shadow-neo font-jakarta font-bold text-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all text-black">
-          BOOK APPOINTMENT
+          BOOK VISIT
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-7 space-y-8">
-      <div class="inline-flex items-center gap-2 bg-[#FF5C8A]/20 dark:bg-[#FF5C8A]/10 border-2 border-black dark:border-neutral-700 px-4 py-1.5 font-jakarta font-bold text-xs shadow-neo-sm">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#FF5C8A] animate-pulse"></span>
-        VIJAYAWADA'S PREMIER DERMATOLOGY CLINIC
+  <!-- KINETIC HERO -->
+  <section class="relative max-w-7xl mx-auto px-6 py-16 md:py-28 overflow-hidden">
+    <div class="absolute -right-20 top-10 w-96 h-96 bg-[#FF5C8A]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 bottom-10 w-96 h-96 bg-[#FFE55C]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 space-y-6 max-w-5xl">
+      <div class="inline-flex items-center gap-2 bg-[#FF5C8A] text-white border-2 border-black px-4 py-1.5 font-jakarta font-bold text-xs shadow-neo-sm rotate-[-1deg]">
+        <span>🔥 VIJAYAWADA'S #1 DERMATOLOGY EXPERT</span>
       </div>
 
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.05]">
-        FLAWLESS <span class="bg-[#FFE55C] px-3 py-1 border-2 border-black inline-block shadow-neo rotate-[-1deg]">SKIN</span> & RADIANT HAIR.
+      <!-- KINETIC TYPOGRAPHY HEADINGS -->
+      <h1 class="text-5xl sm:text-7xl lg:text-9xl font-syne font-extrabold uppercase tracking-tight leading-[0.9]">
+        FLAWLESS <span class="bg-[#FFE55C] text-black px-4 border-2 border-black inline-block shadow-neo rotate-[1deg]">SKIN.</span>
+      </h1>
+      <h1 class="text-5xl sm:text-7xl lg:text-9xl font-syne font-extrabold uppercase tracking-tight leading-[0.9]">
+        RADIANT <span class="bg-[#FF5C8A] text-white px-4 border-2 border-black inline-block shadow-neo rotate-[-1deg]">HAIR.</span>
+      </h1>
+      <h1 class="text-3xl sm:text-5xl lg:text-7xl font-syne font-bold uppercase tracking-tight text-transparent text-stroke-black pt-2">
+        ZERO COMPROMISE. MAXIMUM GLOW.
       </h1>
 
-      <p class="text-lg md:text-xl font-jakarta text-neutral-700 dark:text-neutral-300 max-w-xl">
-        Advanced medical dermatology, anti-aging aesthetics, and custom acne solutions led by Dr. Ushma in Suryaraopeta, Vijayawada.
+      <p class="text-lg md:text-2xl font-jakarta text-neutral-700 dark:text-neutral-300 max-w-2xl pt-4">
+        Advanced clinical dermatology, custom acne protocols, and transformative anti-aging aesthetics led by Dr. Ushma in Suryaraopeta.
       </p>
 
       <div class="flex flex-wrap gap-4 pt-4">
-        <a href="#book" class="px-8 py-4 bg-[#FF5C8A] text-white font-jakarta font-extrabold border-2 border-black shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-base flex items-center gap-3">
-          BOOK CONSULTATION <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        <a href="#book" class="px-8 py-4 bg-[#FF5C8A] text-white border-2 border-black shadow-neo font-syne font-extrabold text-lg hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center gap-3">
+          <span>SCHEDULE CONSULTATION</span>
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
-        <a href="tel:+919876543210" class="px-8 py-4 bg-white dark:bg-neutral-800 text-black dark:text-white font-jakarta font-extrabold border-2 border-black dark:border-neutral-600 shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-base flex items-center gap-3">
-          <i data-lucide="phone" class="w-5 h-5 text-[#FF5C8A]"></i> +91 98765 43210
+        <a href="#services" class="px-8 py-4 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border-2 border-black dark:border-neutral-700 shadow-neo font-syne font-extrabold text-lg hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          EXPLORE TREATMENTS
         </a>
       </div>
 
-      <div class="grid grid-cols-3 gap-6 pt-8 border-t-2 border-black dark:border-neutral-800">
-        <div>
-          <div class="text-3xl md:text-4xl font-extrabold">15K+</div>
-          <div class="text-xs font-jakarta font-semibold text-neutral-600 dark:text-neutral-400">Happy Patients</div>
+      <!-- STATS GRID -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12">
+        <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-6 shadow-neo">
+          <div class="text-4xl font-syne font-extrabold text-[#FF5C8A]">20+</div>
+          <div class="text-xs font-jakarta font-bold uppercase text-neutral-600 dark:text-neutral-400 mt-1">Years Experience</div>
         </div>
-        <div>
-          <div class="text-3xl md:text-4xl font-extrabold">20+</div>
-          <div class="text-xs font-jakarta font-semibold text-neutral-600 dark:text-neutral-400">Years Experience</div>
+        <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-6 shadow-neo">
+          <div class="text-4xl font-syne font-extrabold text-[#FFE55C] text-stroke-black">15K+</div>
+          <div class="text-xs font-jakarta font-bold uppercase text-neutral-600 dark:text-neutral-400 mt-1">Happy Patients</div>
         </div>
-        <div>
-          <div class="text-3xl md:text-4xl font-extrabold">4.9★</div>
-          <div class="text-xs font-jakarta font-semibold text-neutral-600 dark:text-neutral-400">Patient Rating</div>
+        <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-6 shadow-neo">
+          <div class="text-4xl font-syne font-extrabold text-[#FF5C8A]">100%</div>
+          <div class="text-xs font-jakarta font-bold uppercase text-neutral-600 dark:text-neutral-400 mt-1">Safe Protocols</div>
+        </div>
+        <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-6 shadow-neo">
+          <div class="text-4xl font-syne font-extrabold text-[#FFE55C] text-stroke-black">4.9★</div>
+          <div class="text-xs font-jakarta font-bold uppercase text-neutral-600 dark:text-neutral-400 mt-1">Google Rating</div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- HERO CARD GRAPHIC -->
-    <div class="lg:col-span-5 relative">
-      <div class="absolute -inset-4 bg-[#FFE55C] border-2 border-black shadow-neo rotate-2"></div>
-      <div class="relative bg-white dark:bg-neutral-900 border-2 border-black p-6 shadow-neo space-y-6">
-        <div class="flex justify-between items-center border-b-2 border-black pb-4">
-          <div class="flex items-center gap-2">
-            <div class="w-3 h-3 bg-red-500 rounded-full border border-black"></div>
-            <div class="w-3 h-3 bg-yellow-500 rounded-full border border-black"></div>
-            <div class="w-3 h-3 bg-green-500 rounded-full border border-black"></div>
-          </div>
-          <span class="font-jakarta font-bold text-xs">CLINIC_STATUS.EXE</span>
+  <!-- KINETIC SERVICES TICKER -->
+  <div class="bg-black text-white py-6 border-y-2 border-black overflow-hidden font-syne font-bold text-xl uppercase tracking-widest my-12">
+    <div class="animate-kinetic flex gap-12 items-center">
+      <span>⚡ ACNE & SCAR REVISION • LASER HAIR REDUCTION • GLUTATHIONE GLOW • PIGMENTATION TREATMENT • ANTI-AGING BOTOX & FILLERS •</span>
+      <span>⚡ ACNE & SCAR REVISION • LASER HAIR REDUCTION • GLUTATHIONE GLOW • PIGMENTATION TREATMENT • ANTI-AGING BOTOX & FILLERS •</span>
+    </div>
+  </div>
+
+  <!-- SERVICES GRID -->
+  <section id="services" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="bg-[#FFE55C] text-black border-2 border-black px-3 py-1 font-jakarta font-bold text-xs uppercase shadow-neo-sm">CLINICAL EXCELLENCE</span>
+        <h2 class="text-4xl md:text-6xl font-syne font-extrabold uppercase mt-4">ADVANCED TREATMENTS</h2>
+      </div>
+      <p class="text-neutral-600 dark:text-neutral-400 font-jakarta max-w-md mt-4 md:mt-0">
+        Cutting-edge FDA-approved technology combined with clinical precision for radiant results.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service 1 -->
+      <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-8 shadow-neo flex flex-col justify-between group hover:-translate-y-1 transition-all">
+        <div>
+          <div class="w-14 h-14 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-syne font-bold text-xl text-black shadow-neo-sm mb-6">01</div>
+          <h3 class="text-2xl font-syne font-bold uppercase mb-3">ACNE & SCAR REVISION</h3>
+          <p class="text-neutral-600 dark:text-neutral-300 font-jakarta text-sm leading-relaxed">
+            Advanced fractional lasers, chemical peels, and microneedling RF to resurface smooth, blemish-free skin.
+          </p>
         </div>
+        <div class="pt-8 flex items-center justify-between border-t-2 border-neutral-200 dark:border-neutral-700 mt-6">
+          <span class="font-syne font-bold text-sm text-[#FF5C8A]">CUSTOM PROTOCOL</span>
+          <a href="#book" class="p-2 bg-[#FFE55C] border-2 border-black shadow-neo-sm group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all">
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-black"></i>
+          </a>
+        </div>
+      </div>
 
-        <div class="space-y-4">
-          <div class="p-4 bg-[#FFFDF9] dark:bg-neutral-800 border-2 border-black">
-            <div class="text-xs font-jakarta font-bold text-[#FF5C8A] mb-1">LEAD DERMATOLOGIST</div>
-            <div class="text-xl font-extrabold">Dr. Ushma, M.D.</div>
-            <div class="text-sm font-jakarta text-neutral-600 dark:text-neutral-400">Senior Consultant Dermatologist & Cosmetologist</div>
-          </div>
+      <!-- Service 2 -->
+      <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-8 shadow-neo flex flex-col justify-between group hover:-translate-y-1 transition-all">
+        <div>
+          <div class="w-14 h-14 bg-[#FF5C8A] border-2 border-black flex items-center justify-center font-syne font-bold text-xl text-white shadow-neo-sm mb-6">02</div>
+          <h3 class="text-2xl font-syne font-bold uppercase mb-3">LASER HAIR REDUCTION</h3>
+          <p class="text-neutral-600 dark:text-neutral-300 font-jakarta text-sm leading-relaxed">
+            Painless Triple-Wavelength Diode Laser technology for permanent hair reduction across all skin types.
+          </p>
+        </div>
+        <div class="pt-8 flex items-center justify-between border-t-2 border-neutral-200 dark:border-neutral-700 mt-6">
+          <span class="font-syne font-bold text-sm text-[#FF5C8A]">PAINLESS TECH</span>
+          <a href="#book" class="p-2 bg-[#FFE55C] border-2 border-black shadow-neo-sm group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all">
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-black"></i>
+          </a>
+        </div>
+      </div>
 
-          <div class="grid grid-cols-2 gap-4">
-            <div class="p-4 bg-[#FFE55C]/20 border-2 border-black">
-              <div class="text-xs font-jakarta font-bold mb-1">LOCATION</div>
-              <div class="text-sm font-bold">Suryaraopeta, Vijayawada</div>
-            </div>
-            <div class="p-4 bg-[#FF5C8A]/20 border-2 border-black">
-              <div class="text-xs font-jakarta font-bold mb-1">TIMINGS</div>
-              <div class="text-sm font-bold">10 AM - 8 PM (Mon-Sat)</div>
-            </div>
-          </div>
-
-          <a href="#book" class="block w-full py-3 bg-black text-white dark:bg-white dark:text-black text-center font-jakarta font-extrabold border-2 border-black shadow-neo-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
-            SCHEDULE VISIT NOW →
+      <!-- Service 3 -->
+      <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-8 shadow-neo flex flex-col justify-between group hover:-translate-y-1 transition-all">
+        <div>
+          <div class="w-14 h-14 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-syne font-bold text-xl text-black shadow-neo-sm mb-6">03</div>
+          <h3 class="text-2xl font-syne font-bold uppercase mb-3">ANTI-AGING & GLOW</h3>
+          <p class="text-neutral-600 dark:text-neutral-300 font-jakarta text-sm leading-relaxed">
+            Botox, dermal fillers, thread lifts, and IV Glutathione infusions for timeless youthful radiance.
+          </p>
+        </div>
+        <div class="pt-8 flex items-center justify-between border-t-2 border-neutral-200 dark:border-neutral-700 mt-6">
+          <span class="font-syne font-bold text-sm text-[#FF5C8A]">NATURAL RESULTS</span>
+          <a href="#book" class="p-2 bg-[#FFE55C] border-2 border-black shadow-neo-sm group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all">
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-black"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES SECTION -->
-  <section id="services" class="py-20 bg-[#FFFDF9] dark:bg-[#121212] border-t-2 border-black dark:border-neutral-800">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <span class="px-3 py-1 bg-[#FFE55C] border-2 border-black font-jakarta font-bold text-xs shadow-neo-sm inline-block mb-3">OUR SPECIALTIES</span>
-          <h2 class="text-3xl md:text-5xl font-extrabold uppercase">ADVANCED TREATMENTS</h2>
-        </div>
-        <p class="font-jakarta text-neutral-600 dark:text-neutral-400 max-w-md">
-          State-of-the-art dermatological procedures customized for Indian skin types using US FDA-approved technology.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-[#FF5C8A] border-2 border-black shadow-neo-sm flex items-center justify-center text-white mb-6">
-              <i data-lucide="sparkles" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold mb-3">Acne & Scar Resurfacing</h3>
-            <p class="font-jakarta text-neutral-600 dark:text-neutral-400 text-sm mb-6">
-              Fractional CO2 lasers, chemical peels, and microneedling RF for smooth, blemish-free skin.
-            </p>
-          </div>
-          <div class="pt-4 border-t-2 border-neutral-200 dark:border-neutral-800 flex justify-between items-center">
-            <span class="font-jakarta font-bold text-xs">RESULTS IN 3-4 SESSIONS</span>
-            <a href="#book" class="font-jakarta font-bold text-sm underline hover:text-[#FF5C8A]">Book →</a>
-          </div>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-[#FFE55C] border-2 border-black shadow-neo-sm flex items-center justify-center text-black mb-6">
-              <i data-lucide="sun" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold mb-3">Anti-Aging & Glow</h3>
-            <p class="font-jakarta text-neutral-600 dark:text-neutral-400 text-sm mb-6">
-              Botox, dermal fillers, thread lifts, and medical facial treatments for youthful radiance.
-            </p>
-          </div>
-          <div class="pt-4 border-t-2 border-neutral-200 dark:border-neutral-800 flex justify-between items-center">
-            <span class="font-jakarta font-bold text-xs">ZERO DOWNTIME OPTIONS</span>
-            <a href="#book" class="font-jakarta font-bold text-sm underline hover:text-[#FF5C8A]">Book →</a>
-          </div>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-[#5CE1E6] border-2 border-black shadow-neo-sm flex items-center justify-center text-black mb-6">
-              <i data-lucide="zap" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold mb-3">Laser Hair Removal</h3>
-            <p class="font-jakarta text-neutral-600 dark:text-neutral-400 text-sm mb-6">
-              Painless diode laser technology for permanent hair reduction across all skin tones.
-            </p>
-          </div>
-          <div class="pt-4 border-t-2 border-neutral-200 dark:border-neutral-800 flex justify-between items-center">
-            <span class="font-jakarta font-bold text-xs">PAINLESS DIODE TECH</span>
-            <a href="#book" class="font-jakarta font-bold text-sm underline hover:text-[#FF5C8A]">Book →</a>
-          </div>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-[#FFE55C] border-2 border-black shadow-neo-sm flex items-center justify-center text-black mb-6">
-              <i data-lucide="shield" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold mb-3">Hair Loss & GFC Therapy</h3>
-            <p class="font-jakarta text-neutral-600 dark:text-neutral-400 text-sm mb-6">
-              Growth Factor Concentrate (GFC) and PRP treatments to stimulate robust hair follicle regeneration.
-            </p>
-          </div>
-          <div class="pt-4 border-t-2 border-neutral-200 dark:border-neutral-800 flex justify-between items-center">
-            <span class="font-jakarta font-bold text-xs">CLINICALLY PROVEN</span>
-            <a href="#book" class="font-jakarta font-bold text-sm underline hover:text-[#FF5C8A]">Book →</a>
-          </div>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-[#FF5C8A] border-2 border-black shadow-neo-sm flex items-center justify-center text-white mb-6">
-              <i data-lucide="heart" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold mb-3">Pigmentation & Melasma</h3>
-            <p class="font-jakarta text-neutral-600 dark:text-neutral-400 text-sm mb-6">
-              Q-switched lasers and custom medical grade depigmentation protocols for even skin tone.
-            </p>
-          </div>
-          <div class="pt-4 border-t-2 border-neutral-200 dark:border-neutral-800 flex justify-between items-center">
-            <span class="font-jakarta font-bold text-xs">ADVANCED Q-SWITCH</span>
-            <a href="#book" class="font-jakarta font-bold text-sm underline hover:text-[#FF5C8A]">Book →</a>
-          </div>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col justify-between">
-          <div>
-            <div class="w-14 h-14 bg-[#5CE1E6] border-2 border-black shadow-neo-sm flex items-center justify-center text-black mb-6">
-              <i data-lucide="check-circle" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-2xl font-extrabold mb-3">Medical Dermatology</h3>
-            <p class="font-jakarta text-neutral-600 dark:text-neutral-400 text-sm mb-6">
-              Expert diagnosis and treatment for eczema, psoriasis, fungal infections, allergies, and vitiligo.
-            </p>
-          </div>
-          <div class="pt-4 border-t-2 border-neutral-200 dark:border-neutral-800 flex justify-between items-center">
-            <span class="font-jakarta font-bold text-xs">EXPERT DIAGNOSIS</span>
-            <a href="#book" class="font-jakarta font-bold text-sm underline hover:text-[#FF5C8A]">Book →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT DR. USHMA -->
-  <section id="about" class="py-20 bg-[#FFE55C]/10 border-t-2 border-black dark:border-neutral-800">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <!-- DR. USHMA PROFILE SECTION -->
+  <section id="about" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-8 md:p-12 shadow-neo grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-5 relative">
-        <div class="absolute -inset-4 bg-[#FF5C8A] border-2 border-black shadow-neo rotate-[-2deg]"></div>
-        <div class="relative bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo space-y-4">
-          <div class="text-2xl font-extrabold">Dr. Ushma, M.D.</div>
-          <div class="text-sm font-jakarta text-rose-600 font-bold">M.D. Dermatology, Venereology & Leprosy</div>
-          <p class="font-jakarta text-sm text-neutral-700 dark:text-neutral-300">
-            With over two decades of clinical experience, Dr. Ushma is Vijayawada's trusted authority for advanced skin rejuvenation, laser surgeries, and complex dermatological care.
-          </p>
-          <div class="pt-4 border-t-2 border-black dark:border-neutral-800 space-y-2 font-jakarta text-xs font-bold">
-            <div class="flex items-center gap-2">✓ Member, Indian Association of Dermatologists (IADVL)</div>
-            <div class="flex items-center gap-2">✓ Certified Aesthetic Laser Surgeon</div>
-            <div class="flex items-center gap-2">✓ 15,000+ Successful Procedures</div>
+        <div class="absolute inset-0 bg-[#FF5C8A] border-2 border-black translate-x-3 translate-y-3"></div>
+        <div class="relative bg-[#FFE55C] border-2 border-black p-8 text-black aspect-square flex flex-col justify-between">
+          <div class="font-syne font-extrabold text-3xl">DR. USHMA</div>
+          <div>
+            <p class="font-jakarta font-bold text-lg">MBBS, MD - Dermatology</p>
+            <p class="font-jakarta text-sm mt-1">Senior Consultant Dermatologist & Cosmetologist</p>
+          </div>
+          <div class="inline-flex items-center gap-2 bg-black text-white px-3 py-1 font-jakarta font-bold text-xs w-max">
+            <span>20+ YRS EXP</span>
           </div>
         </div>
       </div>
 
       <div class="lg:col-span-7 space-y-6">
-        <span class="px-3 py-1 bg-[#FF5C8A] text-white border-2 border-black font-jakarta font-bold text-xs shadow-neo-sm inline-block">MEET THE EXPERT</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold uppercase">DEDICATED TO YOUR SKIN HEALTH & CONFIDENCE</h2>
-        <p class="font-jakarta text-neutral-700 dark:text-neutral-300 text-lg">
-          "Every skin is unique and deserves a personalized protocol rather than a one-size-fits-all approach. At our Suryaraopeta clinic, we combine ethical medical practices with cutting-edge technology to deliver results you can see and feel."
+        <span class="bg-[#FF5C8A] text-white border-2 border-black px-3 py-1 font-jakarta font-bold text-xs uppercase shadow-neo-sm">MEET THE EXPERT</span>
+        <h2 class="text-3xl md:text-5xl font-syne font-extrabold uppercase">DEDICATED TO YOUR SKIN'S HEALTH & BEAUTY</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 font-jakarta leading-relaxed">
+          Dr. Ushma is a renowned dermatologist in Vijayawada with over two decades of clinical expertise. Known for her ethical approach, precise diagnosis, and bespoke treatment plans, she has transformed the lives of over 15,000 patients.
         </p>
-        <div class="pt-4">
-          <a href="#book" class="inline-block px-8 py-4 bg-black text-white dark:bg-white dark:text-black font-jakarta font-extrabold border-2 border-black shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
-            CONSULT WITH DR. USHMA
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING FORM SECTION -->
-  <section id="book" class="py-20 bg-white dark:bg-neutral-900 border-t-2 border-black dark:border-neutral-800">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <span class="px-3 py-1 bg-[#FFE55C] border-2 border-black font-jakarta font-bold text-xs shadow-neo-sm inline-block mb-3">SECURE YOUR SLOT</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold uppercase">BOOK AN APPOINTMENT</h2>
-        <p class="font-jakarta text-neutral-600 dark:text-neutral-400 mt-2">Fill out the form below or call our clinic directly in Suryaraopeta, Vijayawada.</p>
-      </div>
-
-      <div class="bg-[#FFFDF9] dark:bg-neutral-800 border-2 border-black p-8 md:p-12 shadow-neo">
-        <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block font-jakarta font-bold text-sm mb-2">FULL NAME *</label>
-              <input type="text" id="patientName" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-3 bg-white dark:bg-neutral-900 border-2 border-black font-jakarta focus:outline-none focus:ring-2 focus:ring-[#FF5C8A]">
-            </div>
-            <div>
-              <label class="block font-jakarta font-bold text-sm mb-2">PHONE NUMBER *</label>
-              <input type="tel" id="patientPhone" required placeholder="+91 98765 43210" class="w-full px-4 py-3 bg-white dark:bg-neutral-900 border-2 border-black font-jakarta focus:outline-none focus:ring-2 focus:ring-[#FF5C8A]">
-            </div>
+        <div class="grid grid-cols-2 gap-4 pt-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-bold">✓</div>
+            <span class="font-jakarta font-bold text-sm">FDA-Approved Devices</span>
           </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block font-jakarta font-bold text-sm mb-2">SELECT TREATMENT *</label>
-              <select id="treatmentType" class="w-full px-4 py-3 bg-white dark:bg-neutral-900 border-2 border-black font-jakarta focus:outline-none focus:ring-2 focus:ring-[#FF5C8A]">
-                <option>Acne & Scar Resurfacing</option>
-                <option>Anti-Aging & Glow Facial</option>
-                <option>Laser Hair Removal</option>
-                <option>Hair Loss / GFC Therapy</option>
-                <option>Pigmentation & Melasma</option>
-                <option>General Dermatology Consultation</option>
-              </select>
-            </div>
-            <div>
-              <label class="block font-jakarta font-bold text-sm mb-2">PREFERRED DATE *</label>
-              <input type="date" id="appointmentDate" required class="w-full px-4 py-3 bg-white dark:bg-neutral-900 border-2 border-black font-jakarta focus:outline-none focus:ring-2 focus:ring-[#FF5C8A]">
-            </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-bold">✓</div>
+            <span class="font-jakarta font-bold text-sm">Strict Hygiene Protocols</span>
           </div>
-
-          <div>
-            <label class="block font-jakarta font-bold text-sm mb-2">ADDITIONAL NOTES / CONCERNS</label>
-            <textarea id="patientNotes" rows="3" placeholder="Describe your skin or hair concern..." class="w-full px-4 py-3 bg-white dark:bg-neutral-900 border-2 border-black font-jakarta focus:outline-none focus:ring-2 focus:ring-[#FF5C8A]"></textarea>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-bold">✓</div>
+            <span class="font-jakarta font-bold text-sm">Customized Skincare</span>
           </div>
-
-          <button type="submit" class="w-full py-4 bg-[#FF5C8A] text-white font-jakarta font-extrabold border-2 border-black shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-base uppercase">
-            CONFIRM APPOINTMENT REQUEST
-          </button>
-        </form>
-
-        <div id="successMsg" class="hidden mt-6 p-4 bg-green-100 border-2 border-black text-green-900 font-jakarta font-bold text-center">
-          🎉 Appointment Request Received! Our clinic coordinator will call you shortly to confirm your slot.
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-[#FFE55C] border-2 border-black flex items-center justify-center font-bold">✓</div>
+            <span class="font-jakarta font-bold text-sm">Transparent Pricing</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- REVIEWS SECTION -->
-  <section id="reviews" class="py-20 bg-[#5CE1E6]/10 border-t-2 border-black dark:border-neutral-800">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="px-3 py-1 bg-[#FFE55C] border-2 border-black font-jakarta font-bold text-xs shadow-neo-sm inline-block mb-3">PATIENT TESTIMONIALS</span>
-        <h2 class="text-3xl md:text-5xl font-extrabold uppercase">TRUSTED BY THOUSANDS</h2>
+  <section id="reviews" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="bg-[#FFE55C] text-black border-2 border-black px-3 py-1 font-jakarta font-bold text-xs uppercase shadow-neo-sm">PATIENT TESTIMONIALS</span>
+      <h2 class="text-4xl md:text-5xl font-syne font-extrabold uppercase mt-4">LOVED BY VIJAYAWADA</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-6 shadow-neo flex flex-col justify-between">
+        <div>
+          <div class="flex gap-1 text-[#FFE55C] mb-4">★★★★★</div>
+          <p class="font-jakarta text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+            "Dr. Ushma cured my severe acne scarring when no one else could. Her treatment plan was structured and effective. Highly recommended!"
+          </p>
+        </div>
+        <div class="flex items-center gap-3 mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-700">
+          <div class="w-10 h-10 bg-[#FF5C8A] border-2 border-black font-syne font-bold text-white flex items-center justify-center">SR</div>
+          <div>
+            <h4 class="font-syne font-bold text-sm">Sravani Reddy</h4>
+            <p class="text-xs text-neutral-500 font-jakarta">Vijayawada</p>
+          </div>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-yellow-500">★★★★★</div>
-            <p class="font-jakarta text-sm text-neutral-700 dark:text-neutral-300">
-              "Dr. Ushma is extremely knowledgeable. Her acne scar treatment gave me my confidence back after years of trying different products in Vijayawada."
-            </p>
-          </div>
-          <div class="pt-4 mt-6 border-t-2 border-neutral-200 dark:border-neutral-800 font-jakarta font-bold text-sm">
-            - Swathi V. (Vijayawada)
+      <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-6 shadow-neo flex flex-col justify-between">
+        <div>
+          <div class="flex gap-1 text-[#FFE55C] mb-4">★★★★★</div>
+          <p class="font-jakarta text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+            "Very professional clinic with top-tier laser equipment. Painless hair reduction sessions with incredible permanent results."
+          </p>
+        </div>
+        <div class="flex items-center gap-3 mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-700">
+          <div class="w-10 h-10 bg-[#FFE55C] border-2 border-black font-syne font-bold text-black flex items-center justify-center">KV</div>
+          <div>
+            <h4 class="font-syne font-bold text-sm">Kiran Varma</h4>
+            <p class="text-xs text-neutral-500 font-jakarta">Benz Circle</p>
           </div>
         </div>
+      </div>
 
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-yellow-500">★★★★★</div>
-            <p class="font-jakarta text-sm text-neutral-700 dark:text-neutral-300">
-              "Very clean clinic, highly professional staff, and Dr. Ushma explains the root cause of every issue patiently. Best dermatologist in town."
-            </p>
-          </div>
-          <div class="pt-4 mt-6 border-t-2 border-neutral-200 dark:border-neutral-800 font-jakarta font-bold text-sm">
-            - Rajesh K.
-          </div>
+      <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-neutral-700 p-6 shadow-neo flex flex-col justify-between">
+        <div>
+          <div class="flex gap-1 text-[#FFE55C] mb-4">★★★★★</div>
+          <p class="font-jakarta text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+            "Dr. Ushma is exceptionally polite and explains the root cause patiently. The clinic ambience and staff are extremely welcoming."
+          </p>
         </div>
-
-        <div class="bg-white dark:bg-neutral-900 border-2 border-black p-8 shadow-neo flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-yellow-500">★★★★★</div>
-            <p class="font-jakarta text-sm text-neutral-700 dark:text-neutral-300">
-              "Did GFC hair treatment here. Noticed a massive reduction in hair fall within 3 sessions. Highly recommend Dr. Ushma's clinic!"
-            </p>
-          </div>
-          <div class="pt-4 mt-6 border-t-2 border-neutral-200 dark:border-neutral-800 font-jakarta font-bold text-sm">
-            - Kiranmayi R.
+        <div class="flex items-center gap-3 mt-6 pt-6 border-t-2 border-neutral-200 dark:border-neutral-700">
+          <div class="w-10 h-10 bg-[#FF5C8A] border-2 border-black font-syne font-bold text-white flex items-center justify-center">DP</div>
+          <div>
+            <h4 class="font-syne font-bold text-sm">Divya Priya</h4>
+            <p class="text-xs text-neutral-500 font-jakarta">Governorpet</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- BOOKING FORM SECTION -->
+  <section id="book" class="max-w-4xl mx-auto px-6 py-16">
+    <div class="bg-[#FFE55C] border-2 border-black p-8 md:p-12 shadow-neo">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="bg-black text-white px-3 py-1 font-jakarta font-bold text-xs uppercase">ONLINE BOOKING</span>
+        <h2 class="text-3xl md:text-5xl font-syne font-extrabold uppercase mt-3">SCHEDULE YOUR VISIT</h2>
+        <p class="font-jakarta text-sm mt-2 text-neutral-800">Fill in your details and our clinic coordinator will confirm your appointment instantly.</p>
+      </div>
+
+      <form id="appointmentForm" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block font-jakarta font-bold text-xs uppercase mb-2">Full Name</label>
+            <input type="text" required placeholder="Dhanush Shenoy" class="w-full px-4 py-3 bg-white border-2 border-black shadow-neo-sm font-jakarta focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-jakarta font-bold text-xs uppercase mb-2">Phone Number</label>
+            <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-3 bg-white border-2 border-black shadow-neo-sm font-jakarta focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block font-jakarta font-bold text-xs uppercase mb-2">Select Treatment</label>
+            <select class="w-full px-4 py-3 bg-white border-2 border-black shadow-neo-sm font-jakarta focus:outline-none">
+              <option>Acne & Scar Revision</option>
+              <option>Laser Hair Reduction</option>
+              <option>Anti-Aging & Botox</option>
+              <option>Glutathione Glow Facial</option>
+              <option>General Dermatology Consultation</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-jakarta font-bold text-xs uppercase mb-2">Preferred Date</label>
+            <input type="date" required class="w-full px-4 py-3 bg-white border-2 border-black shadow-neo-sm font-jakarta focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-jakarta font-bold text-xs uppercase mb-2">Additional Notes / Concerns</label>
+          <textarea rows="3" placeholder="Tell us about your skin or hair concern..." class="w-full px-4 py-3 bg-white border-2 border-black shadow-neo-sm font-jakarta focus:outline-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-[#FF5C8A] text-white border-2 border-black shadow-neo font-syne font-extrabold text-lg uppercase hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          CONFIRM APPOINTMENT
+        </button>
+      </form>
+
+      <div id="successMessage" class="hidden mt-6 p-4 bg-white border-2 border-black font-jakarta font-bold text-center text-green-700">
+        🎉 Appointment request received! Our clinic team will call you shortly to confirm your time slot.
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer id="contact" class="bg-black text-white border-t-2 border-black py-16">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-      <div class="space-y-4">
-        <div class="text-2xl font-extrabold font-jakarta">Dr. Ushma's Clinic</div>
-        <p class="font-jakarta text-sm text-neutral-400">
-          Advanced Dermatology, Laser & Aesthetic Clinic located in Suryaraopeta, Vijayawada, Andhra Pradesh.
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-[#FF5C8A] border-2 border-white flex items-center justify-center font-syne font-bold text-xl">U</div>
+          <span class="text-xl font-syne font-bold tracking-tight">DR. USHMA'S CLINIC</span>
+        </div>
+        <p class="text-neutral-400 font-jakarta text-sm leading-relaxed">
+          Advanced dermatological care and medical aesthetics in Vijayawada. Your skin deserves expert hands.
         </p>
       </div>
 
-      <div class="space-y-3 font-jakarta text-sm">
-        <div class="font-extrabold text-base text-[#FFE55C]">QUICK LINKS</div>
-        <div><a href="#services" class="hover:underline">Treatments</a></div>
-        <div><a href="#about" class="hover:underline">Dr. Ushma</a></div>
-        <div><a href="#reviews" class="hover:underline">Patient Reviews</a></div>
-        <div><a href="#book" class="hover:underline">Book Appointment</a></div>
+      <div>
+        <h4 class="font-syne font-bold text-lg mb-4 text-[#FFE55C]">VISIT US</h4>
+        <p class="text-neutral-400 font-jakarta text-sm leading-relaxed">
+          Dr. Ushma Skin & Hair Clinic<br>
+          Suryaraopeta, Near Benz Circle,<br>
+          Vijayawada, Andhra Pradesh 520002
+        </p>
+        <p class="text-neutral-400 font-jakarta text-sm mt-4">
+          📞 +91 98765 43210 / +91 866 247890<br>
+          ⏰ Mon - Sat: 10:00 AM - 8:00 PM
+        </p>
       </div>
 
-      <div class="space-y-3 font-jakarta text-sm">
-        <div class="font-extrabold text-base text-[#FFE55C]">CLINIC HOURS</div>
-        <div>Monday - Saturday:</div>
-        <div class="font-bold">10:00 AM - 8:00 PM</div>
-        <div>Sunday: Closed / Emergency Only</div>
-      </div>
-
-      <div class="space-y-3 font-jakarta text-sm">
-        <div class="font-extrabold text-base text-[#FFE55C]">CONTACT US</div>
-        <div>Suryaraopeta, Vijayawada, Andhra Pradesh 520002</div>
-        <div>Phone: +91 98765 43210</div>
-        <div>Email: care@drushmaskinclinic.com</div>
+      <div>
+        <h4 class="font-syne font-bold text-lg mb-4 text-[#FF5C8A]">QUICK LINKS</h4>
+        <ul class="space-y-2 font-jakarta text-sm text-neutral-400">
+          <li><a href="#services" class="hover:text-white transition-colors">Treatments & Services</a></li>
+          <li><a href="#about" class="hover:text-white transition-colors">About Dr. Ushma</a></li>
+          <li><a href="#reviews" class="hover:text-white transition-colors">Patient Reviews</a></li>
+          <li><a href="#book" class="hover:text-white transition-colors">Book Appointment</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-neutral-800 text-center font-jakarta text-xs text-neutral-500">
-      © 2026 Dr. Ushma Skin & Hair Clinic. All Rights Reserved. Built with Neo-Brutalism.
+    <div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-neutral-800 text-center text-xs font-jakarta text-neutral-500">
+      © 2026 Dr. Ushma Skin & Hair Clinic. All rights reserved. Built with precision.
     </div>
   </footer>
 
   <script>
+    // Lucide Icons
     lucide.createIcons();
 
     // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
     themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      if (document.documentElement.classList.contains('dark')) {
-        localStorage.theme = 'dark';
-      } else {
-        localStorage.theme = 'light';
-      }
+      html.classList.toggle('dark');
     });
 
-    // Booking Handler
-    function handleBooking(e) {
-      e.preventDefault();
-      const name = document.getElementById('patientName').value;
-      const phone = document.getElementById('patientPhone').value;
-      const treatment = document.getElementById('treatmentType').value;
-      const date = document.getElementById('appointmentDate').value;
+    // Form Submission
+    const form = document.getElementById('appointmentForm');
+    const successMsg = document.getElementById('successMessage');
 
-      document.getElementById('bookingForm').reset();
-      const successMsg = document.getElementById('successMsg');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.reset();
       successMsg.classList.remove('hidden');
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+      setTimeout(() => {
+        successMsg.classList.add('hidden');
+      }, 6000);
+    });
   </script>
 </body>
 </html>

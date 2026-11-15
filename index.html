@@ -30,6 +30,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
+    .hover-color { filter: grayscale(100%); transition: filter 0.5s ease; }
+    .hover-color:hover { filter: grayscale(0%); }
   </style>
   <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

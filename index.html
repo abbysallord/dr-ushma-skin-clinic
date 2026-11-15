@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Ushma Skin & Hair Clinic | Aesthetic Dermatology & Trichology</title>
+  <title>Dr. Ushma Skin & Hair Clinic | Scrapbook & Collage Aesthetic</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&family=Special+Elite&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
@@ -15,7 +15,8 @@
       theme: {
         extend: {
           fontFamily: {
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            serif: ['"Playfair Display"', 'serif'],
+            mono: ['"Special Elite"', 'cursive'],
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           }
         }
@@ -23,491 +24,524 @@
     }
   </script>
   <style>
-    .skeu-panel {
-      background: linear-gradient(145deg, #ffffff, #f0f0f3);
-      box-shadow: 12px 12px 24px rgba(163, 177, 198, 0.3), -12px -12px 24px rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.8);
+    .tape {
+      background: rgba(255, 241, 208, 0.65);
+      border-left: 2px dashed rgba(200, 170, 110, 0.4);
+      border-right: 2px dashed rgba(200, 170, 110, 0.4);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      backdrop-filter: blur(2px);
     }
-    .dark .skeu-panel {
-      background: linear-gradient(145deg, #161821, #101219);
-      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6), -10px -10px 25px rgba(35, 38, 48, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+    .dark .tape {
+      background: rgba(60, 55, 45, 0.7);
+      border-left: 2px dashed rgba(150, 140, 110, 0.4);
+      border-right: 2px dashed rgba(150, 140, 110, 0.4);
     }
-    .skeu-btn {
-      background: linear-gradient(to bottom, #ffffff, #f1f3f5);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -2px 3px rgba(0, 0, 0, 0.04);
-      border: 1px solid #dcdfe4;
-      transition: all 0.15s ease;
+    .polaroid {
+      background: #fff;
+      padding: 12px 12px 36px 12px;
+      box-shadow: 6px 6px 20px rgba(0,0,0,0.12), 2px 2px 6px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
     }
-    .skeu-btn:hover {
-      background: linear-gradient(to bottom, #ffffff, #e9ecef);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    .dark .polaroid {
+      background: #1e222d;
+      box-shadow: 6px 6px 25px rgba(0,0,0,0.5), 2px 2px 8px rgba(0,0,0,0.3);
     }
-    .skeu-btn:active {
-      background: #e9ecef;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-      transform: translateY(1px);
+    .scrapbook-card {
+      background: #fdfbf7;
+      box-shadow: 4px 8px 25px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
     }
-    .dark .skeu-btn {
-      background: linear-gradient(to bottom, #2a2e3d, #1f222d);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -2px 3px rgba(0, 0, 0, 0.3);
-      border: 1px solid #383e52;
-    }
-    .dark .skeu-btn:hover {
-      background: linear-gradient(to bottom, #32384a, #252936);
-    }
-    .dark .skeu-btn:active {
-      background: #1a1d26;
-      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
-    }
-    .skeu-input {
-      background: #eef1f5;
-      box-shadow: inset 0 2px 4px rgba(163, 177, 198, 0.4), inset 0 -1px 2px rgba(255, 255, 255, 0.9);
-      border: 1px solid #d1d5db;
-    }
-    .dark .skeu-input {
-      background: #0d0e14;
-      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.8), inset 0 -1px 2px rgba(255, 255, 255, 0.05);
-      border: 1px solid #2a2e3d;
-    }
-    .skeu-badge {
-      background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-      box-shadow: 3px 3px 6px rgba(163, 177, 198, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.8);
-    }
-    .dark .skeu-badge {
-      background: linear-gradient(145deg, #1f222d, #161821);
-      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4), -3px -3px 6px rgba(45, 50, 65, 0.2);
+    .dark .scrapbook-card {
+      background: #161922;
+      box-shadow: 4px 8px 25px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.06);
     }
     html { scroll-behavior: smooth; }
   </style>
 </head>
-<body class="bg-[#E4E8EE] dark:bg-[#0f1117] text-neutral-800 dark:text-neutral-100 font-sans selection:bg-rose-300 dark:selection:bg-rose-900 transition-colors duration-300">
+<body class="bg-[#F4F1EA] dark:bg-[#111318] text-neutral-800 dark:text-neutral-100 font-sans selection:bg-amber-200 dark:selection:bg-amber-900 transition-colors duration-300">
+
+  <!-- TOP SCRAPBOOK BANNER -->
+  <div class="bg-[#E6DFD1] dark:bg-[#1a1d28] border-b border-neutral-300 dark:border-neutral-800 py-2.5 px-4 text-center font-mono text-xs tracking-widest uppercase text-neutral-600 dark:text-neutral-400">
+    ✨ Handcrafted Dermatology • Est. 2014 • Dr. Ushma's Clinical Journal ✨
+  </div>
 
   <!-- NAVIGATION -->
-  <header class="sticky top-0 z-50 bg-[#E4E8EE]/90 dark:bg-[#0f1117]/90 backdrop-blur-md border-b border-neutral-300/60 dark:border-neutral-800 shadow-sm transition-all duration-300">
+  <header class="sticky top-0 z-50 bg-[#F4F1EA]/90 dark:bg-[#111318]/90 backdrop-blur-md border-b border-neutral-300/80 dark:border-neutral-800 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-400 shadow-[0_4px_10px_rgba(244,63,94,0.3)] flex items-center justify-center text-white font-serif font-bold text-xl group-hover:scale-105 transition-transform">U</div>
+        <div class="w-10 h-10 bg-amber-200 dark:bg-amber-900/50 border border-amber-400 dark:border-amber-700 rotate-[-3deg] flex items-center justify-center font-serif font-bold text-lg shadow-sm group-hover:rotate-0 transition-transform">U</div>
         <div>
-          <span class="text-base md:text-lg font-serif font-bold tracking-tight block">Dr. Ushma</span>
-          <span class="text-[10px] font-sans tracking-widest uppercase text-neutral-500 dark:text-neutral-400 font-semibold">Skin & Hair Clinic</span>
+          <span class="text-base font-serif font-bold tracking-tight block">Dr. Ushma Clinic</span>
+          <span class="text-[10px] font-mono tracking-widest uppercase text-neutral-500 dark:text-neutral-400">Skin & Trichology</span>
         </div>
       </a>
 
       <nav class="hidden md:flex items-center gap-8 font-sans font-medium text-sm text-neutral-700 dark:text-neutral-300">
-        <a href="#services" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">Treatments</a>
-        <a href="#about" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">Expertise</a>
-        <a href="#results" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">Before & After</a>
-        <a href="#reviews" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">Reviews</a>
-        <a href="#contact" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">Contact</a>
+        <a href="#services" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Journal / Services</a>
+        <a href="#about" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">About Dr. Ushma</a>
+        <a href="#results" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Case Notes</a>
+        <a href="#reviews" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Patient Letters</a>
+        <a href="#contact" class="hover:text-amber-700 dark:hover:text-amber-400 transition-colors">Book Consult</a>
       </nav>
 
       <div class="flex items-center gap-4">
-        <button id="themeToggle" class="w-11 h-11 rounded-xl skeu-btn flex items-center justify-center text-neutral-700 dark:text-yellow-400 cursor-pointer" aria-label="Toggle Theme">
-          <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
-          <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+        <button id="themeToggle" class="p-2.5 rounded-lg bg-[#EAE3D2] dark:bg-[#1e222d] border border-neutral-300 dark:border-neutral-700 hover:scale-105 transition-transform" title="Toggle Scrapbook Theme">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-neutral-700"></i>
         </button>
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl skeu-btn font-semibold text-sm text-rose-600 dark:text-rose-400">
-          <i data-lucide="calendar" class="w-4 h-4"></i> Book Consult
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-amber-200 text-white dark:text-neutral-900 font-medium text-sm rounded shadow-md hover:opacity-90 transition-opacity">
+          <span>Book Visit</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative pt-20 pb-32 px-6 overflow-hidden">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7 space-y-8">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl skeu-badge text-xs font-semibold uppercase tracking-wider text-rose-600 dark:text-rose-400">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Advanced Dermatology & Cosmetology
+  <!-- HERO SECTION - SCRAPBOOK COLLAGE LAYOUT -->
+  <section class="relative pt-16 pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Handwritten Title & Intro -->
+      <div class="lg:col-span-7 relative z-10">
+        <div class="absolute -top-8 -left-6 w-24 h-8 tape rotate-[-6deg] z-20 flex items-center justify-center font-mono text-[10px] text-neutral-500">Vol. IX</div>
+        
+        <div class="inline-block px-3 py-1 bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 text-amber-800 dark:text-amber-300 font-mono text-xs tracking-wider uppercase mb-6 rotate-[-1deg]">
+          ✦ Advanced Aesthetic Dermatology & Hair Sciences
         </div>
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-[1.1]">
-          Radiant Skin. <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-500">Timeless Beauty.</span>
+        
+        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+          The art & science of <span class="italic font-normal underline decoration-amber-400/60 decoration-wavy">radiant skin</span>.
         </h1>
-        <p class="text-lg text-neutral-600 dark:text-neutral-300 font-normal max-w-xl leading-relaxed">
-          Welcome to Dr. Ushma Skin & Hair Clinic. Combining clinical dermatology excellence with state-of-the-art aesthetic technology for personalized skin rejuvenation and hair restoration.
+        
+        <p class="font-sans text-lg text-neutral-600 dark:text-neutral-300 max-w-xl mb-8 leading-relaxed">
+          Welcome to Dr. Ushma’s clinical sketchbook. Where evidence-based dermatology meets meticulous aesthetic artistry for timeless skin and hair health.
         </p>
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="#contact" class="px-8 py-4 rounded-2xl skeu-btn bg-gradient-to-r from-rose-500 to-rose-600 !text-white font-semibold text-base shadow-[0_6px_20px_rgba(244,63,94,0.3)] flex items-center gap-3 hover:opacity-95 transition-all">
-            <i data-lucide="calendar-check" class="w-5 h-5"></i> Schedule Appointment
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#contact" class="px-7 py-3.5 bg-amber-800 hover:bg-amber-900 dark:bg-amber-200 dark:hover:bg-amber-300 text-white dark:text-neutral-900 font-medium rounded shadow-lg transition-all flex items-center gap-2">
+            <span>Schedule Consultation</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
-          <a href="#services" class="px-8 py-4 rounded-2xl skeu-btn font-semibold text-base text-neutral-700 dark:text-neutral-200 flex items-center gap-2">
-            Explore Treatments <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          <a href="#services" class="px-7 py-3.5 scrapbook-card hover:border-amber-400 font-medium rounded transition-all">
+            Explore Treatments
           </a>
         </div>
 
-        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-neutral-300 dark:border-neutral-800">
+        <!-- Quick Stats badge strip -->
+        <div class="mt-12 grid grid-cols-3 gap-4 pt-8 border-t border-neutral-300/70 dark:border-neutral-800">
           <div>
-            <div class="text-2xl sm:text-3xl font-serif font-bold text-neutral-900 dark:text-white">15+</div>
-            <div class="text-xs text-neutral-500 dark:text-neutral-400 font-medium">Years Experience</div>
+            <span class="block font-serif text-3xl font-bold text-amber-800 dark:text-amber-400">12+</span>
+            <span class="font-mono text-xs text-neutral-500">Years Experience</span>
           </div>
           <div>
-            <div class="text-2xl sm:text-3xl font-serif font-bold text-neutral-900 dark:text-white">10k+</div>
-            <div class="text-xs text-neutral-500 dark:text-neutral-400 font-medium">Happy Patients</div>
+            <span class="block font-serif text-3xl font-bold text-amber-800 dark:text-amber-400">15k+</span>
+            <span class="font-mono text-xs text-neutral-500">Happy Patients</span>
           </div>
           <div>
-            <div class="text-2xl sm:text-3xl font-serif font-bold text-neutral-900 dark:text-white">100%</div>
-            <div class="text-xs text-neutral-500 dark:text-neutral-400 font-medium">FDA-Approved Tech</div>
+            <span class="block font-serif text-3xl font-bold text-amber-800 dark:text-amber-400">100%</span>
+            <span class="font-mono text-xs text-neutral-500">Safety Standard</span>
           </div>
         </div>
       </div>
 
+      <!-- Right Column: Polaroid Collage Grid -->
       <div class="lg:col-span-5 relative">
-        <div class="skeu-panel rounded-3xl p-6 relative overflow-hidden group">
-          <div class="absolute -right-12 -top-12 w-48 h-48 bg-rose-400/20 rounded-full blur-2xl"></div>
-          <div class="rounded-2xl overflow-hidden shadow-[inset_0_2px_8px_rgba(0,0,0,0.15)] aspect-[4/5] relative bg-neutral-200 dark:bg-neutral-800 flex flex-col items-center justify-center p-8 text-center">
-            <div class="w-24 h-24 rounded-full skeu-badge flex items-center justify-center text-rose-500 mb-6 shadow-inner">
-              <i data-lucide="user-check" class="w-12 h-12"></i>
+        <div class="absolute -top-10 right-10 w-28 h-9 tape rotate-[4deg] z-30 flex items-center justify-center font-mono text-[11px] text-neutral-600">Dr. Ushma, MD</div>
+        
+        <div class="relative mx-auto max-w-md">
+          <!-- Main Polaroid -->
+          <div class="polaroid rotate-[-2deg] relative z-20">
+            <div class="h-80 bg-neutral-200 dark:bg-neutral-800 rounded overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1594824813576-6ff4d2459952?q=80&w=800&auto=format&fit=crop" alt="Dr. Ushma Clinic" class="w-full h-full object-cover filter sepia-[0.1] hover:sepia-0 transition-all duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
-            <h3 class="text-2xl font-serif font-bold mb-2">Dr. Ushma, M.D.</h3>
-            <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">Consultant Dermatologist & Cosmetologist</p>
-            <span class="px-4 py-1.5 rounded-xl skeu-badge text-xs font-semibold text-rose-600 dark:text-rose-400">Chief Medical Director</span>
+            <div class="pt-4 font-mono text-sm text-neutral-600 dark:text-neutral-400 flex justify-between items-center">
+              <span>Platelet-Rich Plasma (PRP) Session</span>
+              <span class="text-xs text-amber-600 dark:text-amber-400 font-bold">#01</span>
+            </div>
+          </div>
+
+          <!-- Secondary overlapping Polaroid -->
+          <div class="polaroid rotate-[4deg] absolute -bottom-12 -left-8 w-60 z-30 hidden sm:block scale-90">
+            <div class="h-36 bg-neutral-200 dark:bg-neutral-800 rounded overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1512290900722-9a702082b2f5?q=80&w=600&auto=format&fit=crop" alt="Skin Care Consultation" class="w-full h-full object-cover">
+            </div>
+            <div class="pt-3 font-mono text-xs text-neutral-600 dark:text-neutral-400">
+              Derma-Glow Facial Peel
+            </div>
+          </div>
+          
+          <!-- Stamp badge -->
+          <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-amber-200/90 dark:bg-amber-900/80 border-2 border-dashed border-amber-600 dark:border-amber-400 flex items-center justify-center text-center rotate-[-12deg] z-40 p-2 shadow-lg">
+            <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-amber-900 dark:text-amber-200">Certified Expert</span>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- TREATMENTS SECTION -->
-  <section id="services" class="py-24 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-        <span class="px-4 py-2 rounded-xl skeu-badge text-xs font-semibold uppercase tracking-wider text-rose-600 dark:text-rose-400">Clinical & Aesthetic Excellence</span>
-        <h2 class="text-3xl sm:text-5xl font-serif font-bold">Signature Treatments</h2>
-        <p class="text-neutral-600 dark:text-neutral-400 text-base">Advanced medical and cosmetic procedures tailored to your unique skin and hair profile.</p>
+  <!-- SERVICES SECTION (SCRAPBOOK JOURNAL CARDS) -->
+  <section id="services" class="py-24 bg-[#EBE5D8] dark:bg-[#141720] border-y border-neutral-300 dark:border-neutral-800 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="font-mono text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-200/60 dark:bg-amber-950 px-3 py-1 rounded inline-block mb-3">Clinical Index</span>
+        <h2 class="font-serif text-4xl font-bold mb-4">Specialized Treatments</h2>
+        <p class="font-sans text-neutral-600 dark:text-neutral-400">Every skin and hair type is unique. Explore our curated dermatological procedures.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between group hover:-translate-y-1 transition-transform">
-          <div>
-            <div class="w-14 h-14 rounded-2xl skeu-badge flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 shadow-sm">
-              <i data-lucide="sparkles" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-3">Anti-Aging & Wrinkle Correction</h3>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">Advanced botox, dermal fillers, and thread lifts designed to restore youthful contours and smooth fine lines naturally.</p>
+        
+        <!-- Service Card 1 -->
+        <div class="scrapbook-card p-6 rounded-lg relative group">
+          <div class="absolute -top-3 right-6 w-16 h-6 tape rotate-[3deg]"></div>
+          <div class="w-12 h-12 rounded-lg bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
           </div>
-          <div class="flex items-center justify-between pt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <span class="text-xs font-semibold text-neutral-500 uppercase">Custom Protocol</span>
-            <a href="#contact" class="w-10 h-10 rounded-xl skeu-btn flex items-center justify-center text-rose-600 dark:text-rose-400 group-hover:scale-105 transition-transform">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3">Anti-Aging & Glow</h3>
+          <p class="font-sans text-sm text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+            Advanced Botox, dermal fillers, thread lifts, and medical-grade chemical peels for restoring youthful skin elasticity.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold hover:underline">
+            <span>Book Procedure</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between group hover:-translate-y-1 transition-transform">
-          <div>
-            <div class="w-14 h-14 rounded-2xl skeu-badge flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 shadow-sm">
-              <i data-lucide="sun" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-3">Acne & Scar Resurfacing</h3>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">Fractional CO2 lasers, microneedling RF, and chemical peels to clear active acne and resurface deep acne scars.</p>
+        <!-- Service Card 2 -->
+        <div class="scrapbook-card p-6 rounded-lg relative group">
+          <div class="absolute -top-3 left-8 w-16 h-6 tape rotate-[-2deg]"></div>
+          <div class="w-12 h-12 rounded-lg bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="activity" class="w-6 h-6"></i>
           </div>
-          <div class="flex items-center justify-between pt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <span class="text-xs font-semibold text-neutral-500 uppercase">Visible Results</span>
-            <a href="#contact" class="w-10 h-10 rounded-xl skeu-btn flex items-center justify-center text-rose-600 dark:text-rose-400 group-hover:scale-105 transition-transform">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3">Acne & Scar Revision</h3>
+          <p class="font-sans text-sm text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+            Targeted fractional laser resurfacing, microneedling RF, and customized medical regimens for clear, blemish-free skin.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold hover:underline">
+            <span>Book Procedure</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
 
-        <!-- Card 3 -->
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between group hover:-translate-y-1 transition-transform">
-          <div>
-            <div class="w-14 h-14 rounded-2xl skeu-badge flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 shadow-sm">
-              <i data-lucide="activity" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-3">Hair Loss & PRP Therapy</h3>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">Comprehensive hair root analysis, GFC, and Platelet-Rich Plasma (PRP) treatments to stimulate robust hair follicles.</p>
+        <!-- Service Card 3 -->
+        <div class="scrapbook-card p-6 rounded-lg relative group">
+          <div class="absolute -top-3 right-8 w-16 h-6 tape rotate-[4deg]"></div>
+          <div class="w-12 h-12 rounded-lg bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="feather" class="w-6 h-6"></i>
           </div>
-          <div class="flex items-center justify-between pt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <span class="text-xs font-semibold text-neutral-500 uppercase">Follicle Repair</span>
-            <a href="#contact" class="w-10 h-10 rounded-xl skeu-btn flex items-center justify-center text-rose-600 dark:text-rose-400 group-hover:scale-105 transition-transform">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3">Hair Restoration (PRP)</h3>
+          <p class="font-sans text-sm text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+            Comprehensive trichological diagnostics, GFC hair therapy, and PRP treatments for combating hair thinning and alopecia.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold hover:underline">
+            <span>Book Procedure</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
 
-        <!-- Card 4 -->
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between group hover:-translate-y-1 transition-transform">
-          <div>
-            <div class="w-14 h-14 rounded-2xl skeu-badge flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 shadow-sm">
-              <i data-lucide="shield" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-3">Pigmentation & Melasma</h3>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">Q-switched Nd:YAG lasers and tailored medical depigmentation facials to correct stubborn sun spots and melasma.</p>
+        <!-- Service Card 4 -->
+        <div class="scrapbook-card p-6 rounded-lg relative group">
+          <div class="absolute -top-3 left-6 w-16 h-6 tape rotate-[-3deg]"></div>
+          <div class="w-12 h-12 rounded-lg bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
           </div>
-          <div class="flex items-center justify-between pt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <span class="text-xs font-semibold text-neutral-500 uppercase">Even Tone</span>
-            <a href="#contact" class="w-10 h-10 rounded-xl skeu-btn flex items-center justify-center text-rose-600 dark:text-rose-400 group-hover:scale-105 transition-transform">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3">Pigmentation & Melasma</h3>
+          <p class="font-sans text-sm text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+            Q-switched laser toning, picosecond technology, and hyperpigmentation protocols for an even, luminous complexion.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold hover:underline">
+            <span>Book Procedure</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
 
-        <!-- Card 5 -->
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between group hover:-translate-y-1 transition-transform">
-          <div>
-            <div class="w-14 h-14 rounded-2xl skeu-badge flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 shadow-sm">
-              <i data-lucide="zap" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-3">Permanent Laser Hair Reduction</h3>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">Painless triple-wavelength diode laser hair removal suitable for all skin types with permanent smooth results.</p>
+        <!-- Service Card 5 -->
+        <div class="scrapbook-card p-6 rounded-lg relative group">
+          <div class="absolute -top-3 right-6 w-16 h-6 tape rotate-[2deg]"></div>
+          <div class="w-12 h-12 rounded-lg bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="zap" class="w-6 h-6"></i>
           </div>
-          <div class="flex items-center justify-between pt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <span class="text-xs font-semibold text-neutral-500 uppercase">Painless Tech</span>
-            <a href="#contact" class="w-10 h-10 rounded-xl skeu-btn flex items-center justify-center text-rose-600 dark:text-rose-400 group-hover:scale-105 transition-transform">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3">Laser Hair Reduction</h3>
+          <p class="font-sans text-sm text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+            Pain-free diode and triple-wavelength laser hair removal for smooth, silky, hair-free skin across all skin types.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold hover:underline">
+            <span>Book Procedure</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
 
-        <!-- Card 6 -->
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between group hover:-translate-y-1 transition-transform">
-          <div>
-            <div class="w-14 h-14 rounded-2xl skeu-badge flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6 shadow-sm">
-              <i data-lucide="heart" class="w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-serif font-bold mb-3">Medical Facials & Bridal Prep</h3>
-            <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-6">HydraFacial, oxygen infusions, and instant glow medical peels curated for weddings, shoots, and special events.</p>
+        <!-- Service Card 6 -->
+        <div class="scrapbook-card p-6 rounded-lg relative group">
+          <div class="absolute -top-3 left-6 w-16 h-6 tape rotate-[-1deg]"></div>
+          <div class="w-12 h-12 rounded-lg bg-amber-100 dark:bg-amber-950/80 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="heart" class="w-6 h-6"></i>
           </div>
-          <div class="flex items-center justify-between pt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <span class="text-xs font-semibold text-neutral-500 uppercase">Instant Radiance</span>
-            <a href="#contact" class="w-10 h-10 rounded-xl skeu-btn flex items-center justify-center text-rose-600 dark:text-rose-400 group-hover:scale-105 transition-transform">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3">Clinical Dermatology</h3>
+          <p class="font-sans text-sm text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+            Expert medical management of chronic skin conditions including eczema, psoriasis, rosacea, and allergic contact dermatitis.
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-amber-800 dark:text-amber-400 font-bold hover:underline">
+            <span>Book Procedure</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
-  <section id="about" class="py-24 px-6 bg-[#D8DCe6] dark:bg-[#12141c] border-y border-neutral-300/60 dark:border-neutral-800">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <div class="space-y-6">
-        <span class="px-4 py-2 rounded-xl skeu-badge text-xs font-semibold uppercase tracking-wider text-rose-600 dark:text-rose-400">The Clinic Experience</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold leading-tight">Where Medical Science Meets Aesthetic Artistry</h2>
-        <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
-          At Dr. Ushma Skin & Hair Clinic, every treatment plan is preceded by a comprehensive diagnostic consultation. We believe in ethical dermatology—recommending only what your skin truly needs.
+  <!-- ABOUT DR. USHMA -->
+  <section id="about" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left polaroid stack -->
+      <div class="lg:col-span-5 relative">
+        <div class="absolute -top-6 left-10 w-24 h-7 tape rotate-[-4deg] z-30"></div>
+        <div class="polaroid rotate-[2deg] max-w-sm mx-auto">
+          <div class="h-96 bg-neutral-200 dark:bg-neutral-800 rounded overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop" alt="Dr. Ushma" class="w-full h-full object-cover">
+          </div>
+          <div class="pt-4 text-center">
+            <span class="font-serif text-lg font-bold block">Dr. Ushma, M.D.</span>
+            <span class="font-mono text-xs text-neutral-500">Lead Consultant Dermatologist</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Bio -->
+      <div class="lg:col-span-7">
+        <span class="font-mono text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-200/60 dark:bg-amber-950 px-3 py-1 rounded inline-block mb-4">Doctor's Note</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold mb-6">Dedicated to your skin’s natural resilience.</h2>
+        <p class="font-sans text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed text-lg">
+          With over a decade of dedicated clinical practice and aesthetic innovation, Dr. Ushma believes that true dermatological care is a harmonious blend of medical science and subtle artistry.
+        </p>
+        <p class="font-sans text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+          Graduating from top medical institutions and regularly training in international aesthetic congresses, Dr. Ushma and her team prioritize patient safety, natural-looking enhancements, and lifelong skin health education.
         </p>
 
-        <div class="space-y-4 pt-4">
-          <div class="skeu-panel p-4 rounded-2xl flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl skeu-badge flex items-center justify-center text-rose-600 shrink-0 font-bold">1</div>
-            <div>
-              <h4 class="font-bold text-base mb-1">Advanced Diagnostics</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">Computerized skin analysis to evaluate hydration, pigmentation depth, and sebum levels.</p>
-            </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6 border-t border-neutral-300 dark:border-neutral-800">
+          <div>
+            <span class="font-serif font-bold text-xl block mb-1">MBBS, MD</span>
+            <span class="font-mono text-xs text-neutral-500">Dermatology & Venereology</span>
           </div>
-          <div class="skeu-panel p-4 rounded-2xl flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl skeu-badge flex items-center justify-center text-rose-600 shrink-0 font-bold">2</div>
-            <div>
-              <h4 class="font-bold text-base mb-1">USFDA Approved Equipment</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">Zero-compromise safety standards using gold-standard lasers and genuine injectables.</p>
-            </div>
+          <div>
+            <span class="font-serif font-bold text-xl block mb-1">IADVL</span>
+            <span class="font-mono text-xs text-neutral-500">Active Life Member</span>
           </div>
-          <div class="skeu-panel p-4 rounded-2xl flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl skeu-badge flex items-center justify-center text-rose-600 shrink-0 font-bold">3</div>
-            <div>
-              <h4 class="font-bold text-base mb-1">Holistic Aftercare</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">Customized medical-grade homecare regimens to maintain and prolong your clinical results.</p>
-            </div>
+          <div>
+            <span class="font-serif font-bold text-xl block mb-1">100%</span>
+            <span class="font-mono text-xs text-neutral-500">FDA-Approved Devices</span>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-6">
-        <div class="skeu-panel rounded-3xl p-6 flex flex-col items-center justify-center text-center h-72">
-          <div class="w-16 h-16 rounded-2xl skeu-badge flex items-center justify-center text-rose-500 mb-4">
-            <i data-lucide="shield-check" class="w-8 h-8"></i>
-          </div>
-          <h4 class="font-serif font-bold text-lg mb-1">Pristine Ambience</h4>
-          <p class="text-xs text-neutral-500">Sterilized, welcoming consultation and laser suites</p>
-        </div>
-        <div class="skeu-panel rounded-3xl p-6 flex flex-col items-center justify-center text-center h-72 mt-8">
-          <div class="w-16 h-16 rounded-2xl skeu-badge flex items-center justify-center text-rose-500 mb-4">
-            <i data-lucide="award" class="w-8 h-8"></i>
-          </div>
-          <h4 class="font-serif font-bold text-lg mb-1">Expert Care</h4>
-          <p class="text-xs text-neutral-500">Board-certified dermatologists & trained technicians</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="reviews" class="py-24 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-        <span class="px-4 py-2 rounded-xl skeu-badge text-xs font-semibold uppercase tracking-wider text-rose-600 dark:text-rose-400">Patient Stories</span>
-        <h2 class="text-3xl sm:text-5xl font-serif font-bold">Trusted by Thousands</h2>
+  <!-- PATIENT REVIEWS (SCRAPBOOK STICKY NOTES) -->
+  <section id="reviews" class="py-24 bg-[#EBE5D8] dark:bg-[#141720] border-y border-neutral-300 dark:border-neutral-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="font-mono text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-200/60 dark:bg-amber-950 px-3 py-1 rounded inline-block mb-3">Testimonials</span>
+        <h2 class="font-serif text-4xl font-bold mb-4">Patient Notes & Letters</h2>
+        <p class="font-sans text-neutral-600 dark:text-neutral-400">Read handwritten experiences from our valued patients.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-amber-500 gap-1">
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            </div>
-            <p class="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed italic">"Dr. Ushma completely transformed my skin. After years of struggling with acne scars, the laser resurfacing protocol worked wonders. Highly professional clinic!"</p>
+        
+        <!-- Review 1 -->
+        <div class="scrapbook-card p-8 rounded-lg relative rotate-[-1deg]">
+          <div class="absolute -top-3 left-10 w-20 h-6 tape rotate-[2deg]"></div>
+          <div class="flex items-center gap-1 text-amber-500 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
-          <div class="flex items-center gap-4 pt-6 mt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <div class="w-10 h-10 rounded-full skeu-badge flex items-center justify-center font-bold text-rose-600">PS</div>
+          <p class="font-serif italic text-lg mb-6 leading-relaxed">
+            "Dr. Ushma diagnosed my adult acne when no one else could. Her customized treatment plan changed my skin completely in just 3 months!"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+            <div class="w-10 h-10 rounded-full bg-amber-200 dark:bg-amber-900 flex items-center justify-center font-bold text-amber-900 dark:text-amber-200 font-serif">P</div>
             <div>
-              <div class="font-bold text-sm">Priya Sharma</div>
-              <div class="text-xs text-neutral-500">Acne Scar Treatment</div>
+              <span class="font-bold text-sm block">Priya Sharma</span>
+              <span class="font-mono text-[10px] text-neutral-500">Verified Patient</span>
             </div>
           </div>
         </div>
 
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-amber-500 gap-1">
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            </div>
-            <p class="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed italic">"The PRP sessions for my hair thinning were exceptionally effective. Dr. Ushma is extremely knowledgeable and genuinely cares about results rather than upselling."</p>
+        <!-- Review 2 -->
+        <div class="scrapbook-card p-8 rounded-lg relative rotate-[1.5deg]">
+          <div class="absolute -top-3 right-10 w-20 h-6 tape rotate-[-3deg]"></div>
+          <div class="flex items-center gap-1 text-amber-500 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
-          <div class="flex items-center gap-4 pt-6 mt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <div class="w-10 h-10 rounded-full skeu-badge flex items-center justify-center font-bold text-rose-600">RK</div>
+          <p class="font-serif italic text-lg mb-6 leading-relaxed">
+            "The clinic has such a warm, comforting vibe. I got PRP sessions for hair thinning and the results exceeded all my expectations."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+            <div class="w-10 h-10 rounded-full bg-amber-200 dark:bg-amber-900 flex items-center justify-center font-bold text-amber-900 dark:text-amber-200 font-serif">R</div>
             <div>
-              <div class="font-bold text-sm">Rahul Kapoor</div>
-              <div class="text-xs text-neutral-500">Hair PRP Therapy</div>
+              <span class="font-bold text-sm block">Rohit Verma</span>
+              <span class="font-mono text-[10px] text-neutral-500">Verified Patient</span>
             </div>
           </div>
         </div>
 
-        <div class="skeu-panel rounded-3xl p-8 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex text-amber-500 gap-1">
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            </div>
-            <p class="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed italic">"Got my bridal prep facials done here. My skin was glowing on my wedding day! The clinic ambience is serene and pristine. 10/10 recommended."</p>
+        <!-- Review 3 -->
+        <div class="scrapbook-card p-8 rounded-lg relative rotate-[-0.5deg]">
+          <div class="absolute -top-3 left-12 w-20 h-6 tape rotate-[1deg]"></div>
+          <div class="flex items-center gap-1 text-amber-500 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
-          <div class="flex items-center gap-4 pt-6 mt-6 border-t border-neutral-300 dark:border-neutral-800">
-            <div class="w-10 h-10 rounded-full skeu-badge flex items-center justify-center font-bold text-rose-600">AN</div>
+          <p class="font-serif italic text-lg mb-6 leading-relaxed">
+            "Extremely professional and ethical doctor. Never recommends unnecessary procedures. Truly the best dermatologist in town!"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+            <div class="w-10 h-10 rounded-full bg-amber-200 dark:bg-amber-900 flex items-center justify-center font-bold text-amber-900 dark:text-amber-200 font-serif">A</div>
             <div>
-              <div class="font-bold text-sm">Ananya Nair</div>
-              <div class="text-xs text-neutral-500">Bridal Glow Facial</div>
+              <span class="font-bold text-sm block">Ananya Iyer</span>
+              <span class="font-mono text-[10px] text-neutral-500">Verified Patient</span>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- APPOINTMENT / CONTACT SECTION -->
-  <section id="contact" class="py-24 px-6 bg-[#D8DCe6] dark:bg-[#12141c] border-t border-neutral-300/60 dark:border-neutral-800">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-5 space-y-6">
-        <span class="px-4 py-2 rounded-xl skeu-badge text-xs font-semibold uppercase tracking-wider text-rose-600 dark:text-rose-400">Book Consultation</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold">Start Your Skin Journey Today</h2>
-        <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
-          Fill out the consultation request form or reach out directly to schedule your appointment with Dr. Ushma.
-        </p>
+  <!-- BOOKING & CONTACT SECTION -->
+  <section id="contact" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Info -->
+        <div class="lg:col-span-5">
+          <span class="font-mono text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-200/60 dark:bg-amber-950 px-3 py-1 rounded inline-block mb-4">Appointment Desk</span>
+          <h2 class="font-serif text-4xl font-bold mb-6">Schedule your clinical visit today.</h2>
+          <p class="font-sans text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed">
+            Fill out the consultation request form or reach out directly via phone or clinic address. We look forward to welcoming you.
+          </p>
 
-        <div class="space-y-4 pt-4">
-          <div class="skeu-panel p-4 rounded-2xl flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl skeu-badge flex items-center justify-center text-rose-600">
-              <i data-lucide="map-pin" class="w-5 h-5"></i>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-amber-200/60 dark:bg-amber-950 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="font-serif font-bold block text-lg">Clinic Address</span>
+                <span class="font-sans text-sm text-neutral-600 dark:text-neutral-400">Dr. Ushma Skin & Hair Clinic, Elite Medical Square, 2nd Floor, Main Avenue</span>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-neutral-500 uppercase">Location</div>
-              <div class="font-bold text-sm">Dr. Ushma Skin Clinic, Jubilee Hills, Hyderabad</div>
-            </div>
-          </div>
 
-          <div class="skeu-panel p-4 rounded-2xl flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl skeu-badge flex items-center justify-center text-rose-600">
-              <i data-lucide="phone" class="w-5 h-5"></i>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-amber-200/60 dark:bg-amber-950 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="font-serif font-bold block text-lg">Direct Line</span>
+                <span class="font-sans text-sm text-neutral-600 dark:text-neutral-400">+91 (0) 98765 43210 / +91 (0) 80 2345 6789</span>
+              </div>
             </div>
-            <div>
-              <div class="text-xs font-semibold text-neutral-500 uppercase">Direct Helpline</div>
-              <div class="font-bold text-sm">+91 98765 43210 / +91 40 2355 6789</div>
-            </div>
-          </div>
 
-          <div class="skeu-panel p-4 rounded-2xl flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl skeu-badge flex items-center justify-center text-rose-600">
-              <i data-lucide="clock" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <div class="text-xs font-semibold text-neutral-500 uppercase">Clinic Hours</div>
-              <div class="font-bold text-sm">Mon - Sat: 10:00 AM – 8:00 PM (Sun by Appointment)</div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-amber-200/60 dark:bg-amber-950 border border-amber-300 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 shrink-0">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="font-serif font-bold block text-lg">Clinic Hours</span>
+                <span class="font-sans text-sm text-neutral-600 dark:text-neutral-400">Mon - Sat: 10:00 AM – 7:30 PM (Sunday Closed)</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="lg:col-span-7">
-        <div class="skeu-panel rounded-3xl p-8 sm:p-10">
-          <form id="bookingForm" class="space-y-6" onsubmit="event.preventDefault(); alert('Appointment request received! Our clinic coordinator will call you shortly to confirm.');">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-xs font-semibold uppercase text-neutral-500 mb-2">Full Name</label>
-                <input type="text" required class="w-full px-4 py-3.5 rounded-xl skeu-input text-neutral-800 dark:text-neutral-100 focus:outline-none" placeholder="Dhanush Shenoy">
+        <!-- Right Form Card -->
+        <div class="lg:col-span-7">
+          <div class="scrapbook-card p-8 sm:p-10 rounded-xl relative">
+            <div class="absolute -top-4 right-12 w-24 h-7 tape rotate-[2deg]"></div>
+            
+            <h3 class="font-serif text-2xl font-bold mb-6">Request Consultation Appointment</h3>
+            
+            <form id="bookingForm" class="space-y-6" onsubmit="event.preventDefault(); alert('Appointment request received! Our clinic desk will call you back within 2 hours to confirm.');">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block font-mono text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-2">Full Name</label>
+                  <input type="text" required class="w-full px-4 py-3 rounded bg-white dark:bg-[#10131a] border border-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-amber-600 font-sans text-sm" placeholder="e.g. Sameer Malhotra">
+                </div>
+                <div>
+                  <label class="block font-mono text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-2">Phone Number</label>
+                  <input type="tel" required class="w-full px-4 py-3 rounded bg-white dark:bg-[#10131a] border border-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-amber-600 font-sans text-sm" placeholder="+91 98765 43210">
+                </div>
               </div>
-              <div>
-                <label class="block text-xs font-semibold uppercase text-neutral-500 mb-2">Phone Number</label>
-                <input type="tel" required class="w-full px-4 py-3.5 rounded-xl skeu-input text-neutral-800 dark:text-neutral-100 focus:outline-none" placeholder="+91 98765 43210">
-              </div>
-            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-xs font-semibold uppercase text-neutral-500 mb-2">Select Treatment</label>
-                <select class="w-full px-4 py-3.5 rounded-xl skeu-input text-neutral-800 dark:text-neutral-100 focus:outline-none">
-                  <option>Anti-Aging & Wrinkle Correction</option>
-                  <option>Acne & Scar Resurfacing</option>
-                  <option>Hair Loss & PRP Therapy</option>
-                  <option>Pigmentation & Melasma</option>
-                  <option>Laser Hair Reduction</option>
-                  <option>Bridal / Medical Glow Facial</option>
-                </select>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block font-mono text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-2">Select Treatment</label>
+                  <select class="w-full px-4 py-3 rounded bg-white dark:bg-[#10131a] border border-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-amber-600 font-sans text-sm">
+                    <option>Anti-Aging & Glow Consultation</option>
+                    <option>Acne & Scar Revision</option>
+                    <option>Hair Restoration / PRP</option>
+                    <option>Pigmentation & Melasma</option>
+                    <option>Laser Hair Reduction</option>
+                    <option>General Clinical Dermatology</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-mono text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-2">Preferred Date</label>
+                  <input type="date" required class="w-full px-4 py-3 rounded bg-white dark:bg-[#10131a] border border-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-amber-600 font-sans text-sm">
+                </div>
               </div>
+
               <div>
-                <label class="block text-xs font-semibold uppercase text-neutral-500 mb-2">Preferred Date</label>
-                <input type="date" required class="w-full px-4 py-3.5 rounded-xl skeu-input text-neutral-800 dark:text-neutral-100 focus:outline-none">
+                <label class="block font-mono text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-2">Your Concern or Notes (Optional)</label>
+                <textarea rows="4" class="w-full px-4 py-3 rounded bg-white dark:bg-[#10131a] border border-neutral-300 dark:border-neutral-700 focus:outline-none focus:border-amber-600 font-sans text-sm" placeholder="Briefly describe your skin or hair concern..."></textarea>
               </div>
-            </div>
 
-            <div>
-              <label class="block text-xs font-semibold uppercase text-neutral-500 mb-2">Message or Skin Concern</label>
-              <textarea rows="4" class="w-full px-4 py-3.5 rounded-xl skeu-input text-neutral-800 dark:text-neutral-100 focus:outline-none" placeholder="Tell us a bit about your skin or hair goals..."></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-4 rounded-xl skeu-btn bg-gradient-to-r from-rose-500 to-rose-600 !text-white font-bold text-base shadow-[0_6px_20px_rgba(244,63,94,0.3)] hover:opacity-95 transition-all">
-              Confirm Appointment Request
-            </button>
-          </form>
+              <button type="submit" class="w-full py-4 bg-amber-800 hover:bg-amber-900 dark:bg-amber-200 dark:hover:bg-amber-300 text-white dark:text-neutral-900 font-medium rounded shadow-lg transition-all flex items-center justify-center gap-2">
+                <span>Confirm Appointment Request</span>
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+              </button>
+            </form>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-12 px-6 border-t border-neutral-300/60 dark:border-neutral-800 text-center text-sm text-neutral-500">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-lg bg-rose-500 text-white font-serif font-bold flex items-center justify-center">U</div>
-        <span class="font-serif font-bold text-neutral-800 dark:text-white">Dr. Ushma Skin & Hair Clinic</span>
-      </div>
+  <footer class="bg-[#E6DFD1] dark:bg-[#0a0c10] border-t border-neutral-300 dark:border-neutral-800 py-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
       <div>
-        © 2026 Dr. Ushma Skin & Hair Clinic. All rights reserved.
+        <span class="font-serif font-bold text-lg block">Dr. Ushma Skin & Hair Clinic</span>
+        <span class="font-mono text-xs text-neutral-500">Advanced Dermatological & Aesthetic Care</span>
+      </div>
+      <div class="font-mono text-xs text-neutral-500">
+        © 2026 Dr. Ushma. All rights reserved. Handcrafted Scrapbook Edition.
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" class="w-9 h-9 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center hover:bg-amber-200 transition-colors">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
+        </a>
+        <a href="#" class="w-9 h-9 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center hover:bg-amber-200 transition-colors">
+          <i data-lucide="facebook" class="w-4 h-4"></i>
+        </a>
+        <a href="#" class="w-9 h-9 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center hover:bg-amber-200 transition-colors">
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+        </a>
       </div>
     </div>
   </footer>
@@ -515,22 +549,22 @@
   <script>
     lucide.createIcons();
 
+    // Theme Toggle Handler
     const themeToggle = document.getElementById('themeToggle');
     const htmlEl = document.documentElement;
 
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Check user preference
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       htmlEl.classList.add('dark');
-    } else {
-      htmlEl.classList.remove('dark');
     }
 
     themeToggle.addEventListener('click', () => {
       if (htmlEl.classList.contains('dark')) {
         htmlEl.classList.remove('dark');
-        localStorage.theme = 'light';
+        localStorage.setItem('theme', 'light');
       } else {
         htmlEl.classList.add('dark');
-        localStorage.theme = 'dark';
+        localStorage.setItem('theme', 'dark');
       }
     });
   </script>

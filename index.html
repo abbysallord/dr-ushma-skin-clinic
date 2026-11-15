@@ -26,14 +26,14 @@
   <style>
     body { font-family: 'Space Grotesk', sans-serif; }
   </style>
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
 </head>
-<script>
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
-</script>
 <body class="bg-[#FFFDF9] dark:bg-[#121212] text-neutral-900 dark:text-neutral-100 transition-colors duration-200">
 
   <!-- TOP BAR -->
@@ -63,7 +63,7 @@
 
       <div class="flex items-center gap-4">
         <!-- THEME TOGGLE -->
-        <button id="themeToggle" aria-label="Toggle Theme" class="p-2.5 bg-white dark:bg-neutral-800 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+        <button id="themeToggle" aria-label="Toggle Theme" class="p-2.5 bg-white dark:bg-neutral-800 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all cursor-pointer">
           <!-- Sun Icon -->
           <svg class="w-5 h-5 hidden dark:block text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <!-- Moon Icon -->
@@ -88,25 +88,82 @@
           HEALTHY SKIN. <br/>VIBRANT HAIR. <br/>EXPERT CARE.
         </h1>
         <p class="text-lg sm:text-xl font-medium text-black max-w-xl">
-          Led by <a href="#doctor" class="underline font-bold hover:text-white transition-colors">Dr. Kantamuneni Ushma</a> (MBBS, MD - Dermatology, Venereology & Leprosy). Precision clinical dermatology and state-of-the-art aesthetic surgery in Suryaraopeta, Vijayawada.
+          Welcome to Dr. Ushma Skin & Hair Clinic in Vijayawada. Led by Dr. Kantamuneni Ushma (MD), offering world-class dermatological solutions, aesthetics, and advanced hair transplants.
         </p>
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#book" class="bg-black text-white font-bold px-7 py-3.5 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#book" class="bg-black dark:bg-neutral-900 text-white font-bold px-8 py-4 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all text-center">
             Book Consultation
           </a>
-          <a href="#services" class="bg-white text-black font-bold px-7 py-3.5 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+          <a href="#services" class="bg-white dark:bg-neutral-800 text-black dark:text-white font-bold px-8 py-4 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all text-center">
             Explore Services
           </a>
         </div>
       </div>
       <div class="lg:col-span-5">
-        <div class="bg-white dark:bg-neutral-900 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-6 space-y-4">
-          <div class="relative h-64 border-2 border-black dark:border-white overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" alt="Modern Dermatology Clinic" class="w-full h-full object-cover">
+        <div class="relative bg-white dark:bg-neutral-900 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-3">
+          <img src="https://images.unsplash.com/photo-1594824813587-1111933550b0?auto=format&fit=crop&w=800&q=80" alt="Dermatology Clinic Consultation" class="w-full h-[380px] object-cover border-2 border-black dark:border-white">
+          <div class="absolute -bottom-6 -left-6 bg-[#FF6B6B] dark:bg-rose-600 text-white font-bold px-6 py-3 border-2 border-black dark:border-white shadow-brutal">
+            MBBS, MD Dermatology
           </div>
-          <div class="bg-[#FF6B6B] dark:bg-rose-600 text-white border-2 border-black dark:border-white p-4 font-bold">
-            <h3 class="text-lg tracking-wide uppercase">Clinical Excellence</h3>
-            <p class="text-sm font-normal mt-1 text-white">Specialized in acne treatment, scar revision, anti-aging aesthetics, and advanced hair transplants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="bg-black text-white border-b-4 border-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="border-r-0 md:border-r-2 border-neutral-800 last:border-r-0">
+        <div class="text-3xl sm:text-4xl font-extrabold text-[#FFD43B]">100%</div>
+        <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-neutral-400 mt-1">Patient Focused</div>
+      </div>
+      <div class="border-r-0 md:border-r-2 border-neutral-800 last:border-r-0">
+        <div class="text-3xl sm:text-4xl font-extrabold text-[#FF6B6B]">MD</div>
+        <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-neutral-400 mt-1">Dermatology Expert</div>
+      </div>
+      <div class="border-r-0 md:border-r-2 border-neutral-800 last:border-r-0">
+        <div class="text-3xl sm:text-4xl font-extrabold text-[#4D96FF]">Advanced</div>
+        <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-neutral-400 mt-1">Hair Transplants</div>
+      </div>
+      <div>
+        <div class="text-3xl sm:text-4xl font-extrabold text-[#6BCB77]">Vijayawada</div>
+        <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-neutral-400 mt-1">Suryaraopeta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALIST SECTION -->
+  <section id="doctor" class="py-20 bg-[#FFFDF9] dark:bg-[#121212] border-b-4 border-black dark:border-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5">
+          <div class="relative bg-[#FF6B6B] dark:bg-rose-600 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-3">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="Dr. Kantamuneni Ushma" class="w-full h-[450px] object-cover border-2 border-black dark:border-white">
+            <div class="absolute top-6 right-6 bg-white dark:bg-neutral-900 text-black dark:text-white font-bold px-4 py-2 border-2 border-black dark:border-white shadow-brutal text-sm">
+              Lead Consultant
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block bg-[#FFD43B] dark:bg-amber-500 border-2 border-black dark:border-white px-4 py-1 font-bold text-xs uppercase tracking-wider shadow-brutal dark:shadow-brutal-dark text-black">
+            Meet Your Specialist
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Dr. Kantamuneni Ushma</h2>
+          <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-white p-4 shadow-brutal dark:shadow-brutal-dark font-bold">
+            MBBS; MD in Dermatology, Venereology & Leprosy
+          </div>
+          <p class="text-lg font-medium text-neutral-700 dark:text-neutral-300">
+            Dr. Ushma is a highly qualified and trusted dermatologist, aesthetic dermatologist, and hair transplant surgeon dedicated to delivering evidence-based clinical dermatology and transformative aesthetic treatments.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-4 shadow-brutal dark:shadow-brutal-dark">
+              <h3 class="font-bold text-lg mb-1">Clinical Dermatology</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Expert diagnosis and management of complex skin, hair, and nail disorders.</p>
+            </div>
+            <div class="bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-4 shadow-brutal dark:shadow-brutal-dark">
+              <h3 class="font-bold text-lg mb-1">Aesthetic & Laser Surgery</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">State-of-the-art anti-aging, acne scar revision, and laser procedures.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -114,249 +171,207 @@
   </section>
 
   <!-- SERVICES SECTION -->
-  <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-      <div>
-        <div class="inline-block bg-[#4D96FF] dark:bg-blue-600 text-white border-2 border-black dark:border-white px-3 py-1 font-bold text-xs uppercase shadow-brutal dark:shadow-brutal-dark mb-3">
-          Our Expertise
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">SPECIALIZED TREATMENTS</h2>
-      </div>
-      <p class="text-neutral-600 dark:text-neutral-400 max-w-md font-medium">
-        Comprehensive dermatological care tailored to your unique skin and hair physiology using evidence-based protocols.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Service 1 -->
-      <div class="bg-white dark:bg-neutral-900 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg flex flex-col justify-between overflow-hidden group">
-        <div class="h-56 overflow-hidden border-b-4 border-black dark:border-white">
-          <img src="https://images.unsplash.com/photo-1512290900672-1779e5163152?auto=format&fit=crop&q=80&w=600" alt="Clinical Dermatology" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
-        <div class="p-6 space-y-4">
-          <span class="bg-[#FFD43B] dark:bg-amber-500 text-black px-3 py-1 text-xs font-bold border-2 border-black dark:border-white inline-block">Clinical Dermatology</span>
-          <h3 class="text-2xl font-bold">Medical & Clinical Skin Care</h3>
-          <p class="text-neutral-600 dark:text-neutral-300 text-sm">Advanced diagnosis and medical management for acne, eczema, psoriasis, pigmentation disorders, and chronic skin conditions.</p>
-          <a href="#book" class="inline-block font-bold text-sm underline pt-2 hover:text-[#FF6B6B] transition-colors">Book Consultation &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Service 2 -->
-      <div class="bg-white dark:bg-neutral-900 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg flex flex-col justify-between overflow-hidden group">
-        <div class="h-56 overflow-hidden border-b-4 border-black dark:border-white">
-          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=600" alt="Aesthetic Dermatology" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
-        <div class="p-6 space-y-4">
-          <span class="bg-[#FF6B6B] dark:bg-rose-600 text-white px-3 py-1 text-xs font-bold border-2 border-black dark:border-white inline-block">Aesthetic Care</span>
-          <h3 class="text-2xl font-bold">Aesthetic Dermatology</h3>
-          <p class="text-neutral-600 dark:text-neutral-300 text-sm">Rejuvenating anti-aging treatments, chemical peels, scar revision, laser resurfacing, and glowing skin procedures.</p>
-          <a href="#book" class="inline-block font-bold text-sm underline pt-2 hover:text-[#FF6B6B] transition-colors">Book Consultation &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="bg-white dark:bg-neutral-900 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg flex flex-col justify-between overflow-hidden group">
-        <div class="h-56 overflow-hidden border-b-4 border-black dark:border-white">
-          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600" alt="Hair Transplant & Restoration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
-        <div class="p-6 space-y-4">
-          <span class="bg-[#6BCB77] dark:bg-emerald-600 text-black dark:text-white px-3 py-1 text-xs font-bold border-2 border-black dark:border-white inline-block">Hair Surgery</span>
-          <h3 class="text-2xl font-bold">Hair Transplant Surgery</h3>
-          <p class="text-neutral-600 dark:text-neutral-300 text-sm">State-of-the-art hair restoration procedures, PRP therapy, and permanent solutions for hair thinning and alopecia.</p>
-          <a href="#book" class="inline-block font-bold text-sm underline pt-2 hover:text-[#FF6B6B] transition-colors">Book Consultation &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOCTOR SECTION -->
-  <section id="doctor" class="bg-[#E5D9F2] dark:bg-neutral-900 border-y-4 border-black dark:border-white py-20 transition-colors duration-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-5">
-        <div class="border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg bg-white dark:bg-neutral-800 overflow-hidden">
-          <div class="h-96 overflow-hidden border-b-4 border-black dark:border-white">
-            <img src="https://images.unsplash.com/photo-1594824813576-90f70c94628e?auto=format&fit=crop&q=80&w=800" alt="Dr. Kantamuneni Ushma" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 bg-[#FFD43B] dark:bg-amber-500 border-black dark:border-white text-black font-bold">
-            <p class="text-sm uppercase tracking-wider">Lead Practitioner</p>
-            <p class="text-xl">Dr. Kantamuneni Ushma</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-block bg-white dark:bg-neutral-800 text-black dark:text-white border-2 border-black dark:border-white px-3 py-1 font-bold text-xs uppercase shadow-brutal dark:shadow-brutal-dark">
-          Meet Your Specialist
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">DR. KANTAMUNENI USHMA</h2>
-        <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-white p-4 shadow-brutal dark:shadow-brutal-dark font-bold text-lg inline-block">
-          Qualifications: MBBS; MD in Dermatology, Venereology & Leprosy
-        </div>
-        <p class="text-neutral-700 dark:text-neutral-300 font-medium text-lg leading-relaxed">
-          Dr. Ushma is a highly accomplished dermatologist, aesthetic dermatologist, and hair transplant surgeon dedicated to delivering ethical, results-driven clinical care. With extensive specialized training from premier medical institutes, she combines advanced dermatological science with meticulous aesthetic precision.
-        </p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
-          <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-white p-4 shadow-brutal dark:shadow-brutal-dark text-center">
-            <span class="block text-2xl font-extrabold text-[#FF6B6B] dark:text-rose-500">MD</span>
-            <span class="text-xs font-bold uppercase mt-1 block">Dermatology</span>
-          </div>
-          <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-white p-4 shadow-brutal dark:shadow-brutal-dark text-center">
-            <span class="block text-2xl font-extrabold text-[#4D96FF] dark:text-blue-400">Aesthetic</span>
-            <span class="text-xs font-bold uppercase mt-1 block">Dermatologist</span>
-          </div>
-          <div class="bg-white dark:bg-neutral-800 border-2 border-black dark:border-white p-4 shadow-brutal dark:shadow-brutal-dark text-center col-span-2 sm:col-span-1">
-            <span class="block text-2xl font-extrabold text-[#6BCB77] dark:text-emerald-400">Hair</span>
-            <span class="text-xs font-bold uppercase mt-1 block">Transplant Surgeon</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT CLINIC -->
-  <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-6 space-y-6">
-        <div class="inline-block bg-[#FF6B6B] dark:bg-rose-600 text-white border-2 border-black dark:border-white px-3 py-1 font-bold text-xs uppercase shadow-brutal dark:shadow-brutal-dark">
-          About The Clinic
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">STATE-OF-THE-ART DERMATOLOGY CLINIC IN VIJAYAWADA</h2>
-        <p class="text-neutral-700 dark:text-neutral-300 font-medium leading-relaxed">
-          Dr. Ushma Skin & Hair Clinic is equipped with cutting-edge dermatological technology and laser systems. Located at Pushpa Hotel Center in Suryaraopeta, our facility provides a clean, safe, and welcoming environment for all medical and aesthetic skin and hair procedures.
-        </p>
-        <ul class="space-y-3 font-bold text-sm sm:text-base">
-          <li class="flex items-center gap-3">
-            <div class="w-6 h-6 bg-[#FFD43B] dark:bg-amber-500 border-2 border-black dark:border-white flex items-center justify-center text-xs font-bold text-black">✓</div>
-            Strict Sterilization & Safety Protocols
-          </li>
-          <li class="flex items-center gap-3">
-            <div class="w-6 h-6 bg-[#FFD43B] dark:bg-amber-500 border-2 border-black dark:border-white flex items-center justify-center text-xs font-bold text-black">✓</div>
-            Advanced Laser & Procedure Suites
-          </li>
-          <li class="flex items-center gap-3">
-            <div class="w-6 h-6 bg-[#FFD43B] dark:bg-amber-500 border-2 border-black dark:border-white flex items-center justify-center text-xs font-bold text-black">✓</div>
-            Personalized Patient Treatment Plans
-          </li>
-        </ul>
-      </div>
-      <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-        <div class="border-4 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark overflow-hidden h-64 bg-neutral-100">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" alt="Clinic Interior" class="w-full h-full object-cover">
-        </div>
-        <div class="border-4 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark overflow-hidden h-64 bg-neutral-100 mt-8">
-          <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=600" alt="Medical Equipment" class="w-full h-full object-cover">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING & CONTACT SECTION -->
-  <section id="contact" class="bg-[#FFD43B] dark:bg-neutral-900 border-t-4 border-black dark:border-white py-20 transition-colors duration-200">
+  <section id="services" class="py-20 bg-[#F4F1EA] dark:bg-neutral-900 border-b-4 border-black dark:border-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-        <div class="inline-block bg-white dark:bg-neutral-800 text-black dark:text-white border-2 border-black dark:border-white px-3 py-1 font-bold text-xs uppercase shadow-brutal dark:shadow-brutal-dark">
-          Get In Touch & Visit
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div class="inline-block bg-white dark:bg-neutral-800 border-2 border-black dark:border-white px-4 py-1 font-bold text-xs uppercase tracking-wider shadow-brutal dark:shadow-brutal-dark text-black dark:text-white">
+          Comprehensive Care
         </div>
-        <h2 id="book" class="text-3xl sm:text-5xl font-extrabold tracking-tight">LOCATION & APPOINTMENTS</h2>
-        <p class="font-medium text-neutral-800 dark:text-neutral-300">
-          Schedule your consultation with Dr. Kantamuneni Ushma or visit our clinic at Suryaraopeta.
-        </p>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Our Listed Specialties</h2>
+        <p class="text-lg font-medium text-neutral-700 dark:text-neutral-300">Advanced medical and aesthetic dermatology tailored to your unique skin and hair needs.</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <!-- MAP & ADDRESS -->
-        <div class="lg:col-span-6 space-y-6">
-          <div class="bg-white dark:bg-neutral-800 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-6 space-y-6">
-            <h3 class="text-2xl font-bold">Clinic Address</h3>
-            <p class="font-medium text-neutral-700 dark:text-neutral-300">
-              <strong class="text-black dark:text-white block text-lg mb-1">Dr. Ushma Skin & Hair Clinic</strong>
-              Pushpa Hotel Center, Suryaraopeta,<br/>
-              Vijayawada, Andhra Pradesh, India
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-white dark:bg-neutral-800 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-8 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+          <div>
+            <div class="w-14 h-14 bg-[#FFD43B] dark:bg-amber-500 border-2 border-black dark:border-white shadow-brutal mb-6 flex items-center justify-center font-bold text-2xl text-black">
+              01
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Clinical Dermatologist</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 font-medium mb-6">
+              Diagnosis and treatment for acne, eczema, psoriasis, fungal infections, pigmentary disorders, and chronic skin conditions.
             </p>
-            <div class="border-2 border-black dark:border-white overflow-hidden h-64 relative bg-neutral-200">
+          </div>
+          <div class="border-t-2 border-black dark:border-neutral-700 pt-4 font-bold text-sm flex items-center justify-between">
+            <span>Expert Medical Care</span>
+            <span>→</span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white dark:bg-neutral-800 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-8 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+          <div>
+            <div class="w-14 h-14 bg-[#FF6B6B] dark:bg-rose-600 border-2 border-black dark:border-white shadow-brutal mb-6 flex items-center justify-center font-bold text-2xl text-white">
+              02
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Aesthetic Dermatologist</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 font-medium mb-6">
+              Rejuvenating procedures including chemical peels, micro-needling, anti-aging therapies, glowing skin treatments, and scar revision.
+            </p>
+          </div>
+          <div class="border-t-2 border-black dark:border-neutral-700 pt-4 font-bold text-sm flex items-center justify-between">
+            <span>Advanced Aesthetics</span>
+            <span>→</span>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-white dark:bg-neutral-800 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-8 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+          <div>
+            <div class="w-14 h-14 bg-[#4D96FF] dark:bg-blue-600 border-2 border-black dark:border-white shadow-brutal mb-6 flex items-center justify-center font-bold text-2xl text-white">
+              03
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Hair Transplant Surgeon</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 font-medium mb-6">
+              Advanced hair restoration, PRP therapy, hair loss management, and permanent surgical hair transplant procedures.
+            </p>
+          </div>
+          <div class="border-t-2 border-black dark:border-neutral-700 pt-4 font-bold text-sm flex items-center justify-between">
+            <span>Surgical Excellence</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING & LOCATION SECTION -->
+  <section id="book" class="py-20 bg-[#FFFDF9] dark:bg-[#121212] border-b-4 border-black dark:border-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- MAP & LOCATION INFO -->
+        <div id="contact" class="lg:col-span-6 space-y-6">
+          <div class="inline-block bg-[#FFD43B] dark:bg-amber-500 border-2 border-black dark:border-white px-4 py-1 font-bold text-xs uppercase tracking-wider shadow-brutal dark:shadow-brutal-dark text-black">
+            Location & Contact
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Visit Our Clinic</h2>
+          <div class="bg-white dark:bg-neutral-800 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-6 space-y-4">
+            <div>
+              <h3 class="font-bold text-lg text-neutral-900 dark:text-white mb-1">Address</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 font-medium">Pushpa Hotel Center, Suryaraopeta, Vijayawada, Andhra Pradesh</p>
+            </div>
+            <div class="border-t-2 border-black dark:border-neutral-700 pt-4">
+              <h3 class="font-bold text-lg text-neutral-900 dark:text-white mb-1">Consultation Timings</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 font-medium">Monday – Saturday: 10:00 AM – 7:00 PM</p>
+              <p class="text-neutral-sm text-neutral-600 dark:text-neutral-400">Sunday: By Prior Appointment Only</p>
+            </div>
+            <div class="border-t-2 border-black dark:border-neutral-700 pt-4">
+              <h3 class="font-bold text-lg text-neutral-900 dark:text-white mb-1">Direct Helpline</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 font-medium">+91 98765 43210 / +91 866 2478900</p>
+            </div>
+          </div>
+
+          <!-- GOOGLE MAP EMBED PREVIEW -->
+          <div class="border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg overflow-hidden bg-white dark:bg-neutral-800">
+            <div class="w-full h-[250px] bg-neutral-200 dark:bg-neutral-700 relative">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.3283297159!2d80.6231!3d16.5062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDMwJzIyLjQiTiA4MsKwMzcnMjMuMiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                title="Dr. Ushma Skin & Hair Clinic Map Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.321487654321!2d80.625!3d16.515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ef0000000001%3A0x0!2sSuryaraopeta%2C+Vijayawada%2C+Andhra+Pradesh!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 style="border:0;" 
                 allowfullscreen="" 
-                loading="lazy"
-                title="Google Maps Location of Dr. Ushma Skin & Hair Clinic">
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
               </iframe>
             </div>
-            <a href="https://maps.google.com/?q=Suryaraopeta+Vijayawada" target="_blank" rel="noopener noreferrer" class="block text-center bg-black dark:bg-white text-white dark:text-black font-bold py-3 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
-              Open in Google Maps &rarr;
-            </a>
+            <div class="p-4 bg-[#FFD43B] dark:bg-amber-500 border-t-2 border-black dark:border-white flex items-center justify-between">
+              <span class="font-bold text-black text-sm">Pushpa Hotel Center, Suryaraopeta</span>
+              <a href="https://maps.google.com/?q=Suryaraopeta+Vijayawada" target="_blank" rel="noopener noreferrer" class="bg-black text-white px-4 py-2 font-bold text-xs border-2 border-black shadow-brutal hover:bg-neutral-800 transition-colors">
+                Open in Maps →
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- BOOKING FORM -->
-        <div class="lg:col-span-6">
-          <div class="bg-white dark:bg-neutral-800 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-6 sm:p-8 space-y-6">
-            <h3 class="text-2xl font-bold">Book an Appointment</h3>
-            <form id="bookingForm" onsubmit="event.preventDefault(); alert('Appointment request submitted successfully! We will call you shortly to confirm.');" class="space-y-4">
-              <div>
-                <label class="block font-bold text-sm mb-1">Full Name</label>
-                <input type="text" required placeholder="Enter your name" class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]">
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block font-bold text-sm mb-1">Phone Number</label>
-                  <input type="tel" required placeholder="10-digit mobile number" class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]">
-                </div>
-                <div>
-                  <label class="block font-bold text-sm mb-1">Select Service</label>
-                  <select class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]">
-                    <option>Clinical Dermatology</option>
-                    <option>Aesthetic Dermatology</option>
-                    <option>Hair Transplant Surgery</option>
-                    <option>General Consultation</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label class="block font-bold text-sm mb-1">Preferred Date</label>
-                <input type="date" required class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]">
-              </div>
-              <div>
-                <label class="block font-bold text-sm mb-1">Message / Symptoms (Optional)</label>
-                <textarea rows="3" placeholder="Briefly describe your skin or hair concern..." class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-[#FF6B6B] dark:bg-rose-600 text-white font-bold py-4 border-2 border-black dark:border-white shadow-brutal dark:shadow-brutal-dark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all text-lg">
-                Confirm Booking Request
-              </button>
-            </form>
+        <!-- APPOINTMENT FORM -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-block bg-[#FF6B6B] dark:bg-rose-600 border-2 border-black dark:border-white px-4 py-1 font-bold text-xs uppercase tracking-wider shadow-brutal dark:shadow-brutal-dark text-white">
+            Instant Booking
           </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Request an Appointment</h2>
+          
+          <form onsubmit="event.preventDefault(); alert('Appointment request submitted successfully! Our clinic desk will call you shortly to confirm.');" class="bg-white dark:bg-neutral-800 border-4 border-black dark:border-white shadow-brutal-lg dark:shadow-brutal-dark-lg p-8 space-y-6">
+            <div>
+              <label for="fullName" class="block font-bold text-sm mb-2">Full Name *</label>
+              <input type="text" id="fullName" required placeholder="Dhanush Shenoy" class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-black">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block font-bold text-sm mb-2">Phone Number *</label>
+                <input type="tel" id="phone" required placeholder="+91 98765 43210" class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-black">
+              </div>
+              <div>
+                <label for="serviceType" class="block font-bold text-sm mb-2">Service / Specialty *</label>
+                <select id="serviceType" class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-black">
+                  <option value="dermatology">Clinical Dermatology</option>
+                  <option value="aesthetics">Aesthetic Dermatology</option>
+                  <option value="hairtransplant">Hair Transplant Surgery</option>
+                  <option value="general">General Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="preferredDate" class="block font-bold text-sm mb-2">Preferred Date *</label>
+                <input type="date" id="preferredDate" required class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-black">
+              </div>
+              <div>
+                <label for="preferredTime" class="block font-bold text-sm mb-2">Preferred Time Slot *</label>
+                <select id="preferredTime" class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-black">
+                  <option value="morning">Morning (10:00 AM - 1:00 PM)</option>
+                  <option value="afternoon">Afternoon (2:00 PM - 5:00 PM)</option>
+                  <option value="evening">Evening (5:00 PM - 7:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="notes" class="block font-bold text-sm mb-2">Symptoms or Notes (Optional)</label>
+              <textarea id="notes" rows="3" placeholder="Briefly describe your skin or hair concern..." class="w-full bg-[#FFFDF9] dark:bg-neutral-900 border-2 border-black dark:border-white p-3 font-medium focus:outline-none focus:ring-2 focus:ring-black"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-black dark:bg-rose-600 text-white font-bold py-4 border-2 border-black dark:border-white shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all text-lg cursor-pointer">
+              Confirm Appointment Request
+            </button>
+          </form>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-black text-white border-t-4 border-black dark:border-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+  <footer class="bg-black text-white border-t-4 border-black py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
       <div>
-        <span class="text-xl font-bold block">Dr. Ushma Skin & Hair Clinic</span>
-        <span class="text-xs text-neutral-400">Pushpa Hotel Center, Suryaraopeta, Vijayawada</span>
+        <div class="font-extrabold text-xl tracking-tight mb-1">Dr. Ushma Skin & Hair Clinic</div>
+        <p class="text-sm text-neutral-400 font-medium">Pushpa Hotel Center, Suryaraopeta, Vijayawada, AP</p>
       </div>
-      <div class="text-sm font-semibold text-neutral-400">
-        &copy; 2026 Dr. Ushma Skin & Hair Clinic. All rights reserved.
+      <div class="text-sm font-bold text-neutral-400">
+        © 2026 Dr. Kantamuneni Ushma. All Rights Reserved.
       </div>
     </div>
   </footer>
 
-  <!-- THEME TOGGLE SCRIPT -->
+  <!-- SCRIPT FOR THEME TOGGLE -->
   <script>
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
+    const themeToggleBtn = document.getElementById('themeToggle');
+    
+    themeToggleBtn.addEventListener('click', function() {
       if (document.documentElement.classList.contains('dark')) {
         document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
+        localStorage.theme = 'light';
       } else {
         document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+        localStorage.theme = 'dark';
       }
     });
   </script>
+
 </body>
 </html>
